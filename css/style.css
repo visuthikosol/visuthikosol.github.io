@@ -1,0 +1,381 @@
+/* =========================================================
+   Tanik "Nick" Visuthikosol — Portfolio
+   Design tokens: paper/ink palette, blueprint-blue accent,
+   Fraunces (display) + Plex Sans (body) + Plex Mono (spec/label)
+   Signature: crosshair registration marks, blueprint annotations,
+   borderless photo-forward layout, CSS-only masonry, scroll reveals
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  --paper: #FAF9F5;
+  --surface: #FFFFFF;
+  --ink: #1B1B18;
+  --ink-soft: #5B5A52;
+  --ink-faint: #9A988C;
+  --line: #E1DFD4;
+  --blueprint: #1D3557;
+  --blueprint-tint: #EAEFF5;
+  --blueprint-tint-2: #DCE5EF;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+
+  --max: 1240px;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 2px solid var(--blueprint);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1.is-visible { transition-delay: 0.08s; }
+.reveal-delay-2.is-visible { transition-delay: 0.16s; }
+
+/* ---------- eyebrow / mono labels ---------- */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+}
+
+.mono-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blueprint);
+  background: var(--blueprint-tint);
+  border: 1px solid var(--blueprint-tint-2);
+  padding: 0.25em 0.65em;
+  border-radius: 2px;
+}
+
+/* ---------- crosshair signature mark ---------- */
+.crosshair { position: relative; }
+.crosshair::before,
+.crosshair::after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.crosshair::before { top: 10px; left: 10px; border-top: 1.5px solid var(--surface); border-left: 1.5px solid var(--surface); }
+.crosshair::after { bottom: 10px; right: 10px; border-bottom: 1.5px solid var(--surface); border-right: 1.5px solid var(--surface); }
+.crosshair:hover::before, .crosshair:hover::after,
+.crosshair:focus-within::before, .crosshair:focus-within::after { opacity: 0.75; }
+
+/* ---------- header / nav ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(250, 249, 245, 0.92);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.15rem;
+  padding-bottom: 1.15rem;
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.brand span { color: var(--blueprint); }
+
+.nav-links {
+  display: flex;
+  gap: clamp(1.1rem, 3vw, 2.2rem);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  position: relative;
+  padding-bottom: 3px;
+  color: var(--ink-soft);
+  transition: color 0.15s ease;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a.active { color: var(--blueprint); }
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 1.5px;
+  background: var(--blueprint);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  width: 38px;
+  height: 34px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--ink);
+  position: relative;
+}
+.nav-toggle span::before { position: absolute; top: -6px; }
+.nav-toggle span::after { position: absolute; top: 6px; }
+
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem var(--gutter) 1.75rem;
+    gap: 1.1rem;
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: clamp(4rem, 10vw, 7rem);
+  padding: 2.75rem 0 3.25rem;
+}
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+.footer-grid .mono-label { display: block; margin-bottom: 0.6rem; }
+.footer-links { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.92rem; color: var(--ink-soft); }
+.footer-links a:hover { color: var(--blueprint); }
+.footer-note { font-size: 0.8rem; color: var(--ink-faint); font-family: var(--font-mono); }
+
+/* ---------- hero ---------- */
+.hero { padding: clamp(3rem, 9vw, 5.5rem) 0 clamp(2rem, 5vw, 3rem); }
+.hero-eyebrow { margin-bottom: 1.1rem; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+  max-width: 14ch;
+}
+.hero .lede {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0 0 2rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85em 1.4em;
+  border-radius: 2px;
+  border: 1px solid var(--ink);
+  display: inline-block;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn-primary { background: var(--ink); color: var(--paper); }
+.btn-primary:hover { background: var(--blueprint); border-color: var(--blueprint); }
+.btn-ghost { border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--blueprint); color: var(--blueprint); }
+
+/* ---------- section scaffolding ---------- */
+section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1.1rem;
+}
+.section-head h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0;
+}
+.section-head .mono-label { white-space: nowrap; }
+
+/* =========================================================
+   PHOTO-FORWARD MEDIA COMPONENTS
+   Borderless, full-bleed, caption below (not hover-locked).
+   ========================================================= */
+
+.card-media {
+  aspect-ratio: 4 / 3;
+  background: var(--blueprint-tint);
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.card-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s cubic-bezier(.2,.7,.3,1);
+}
+.crosshair:hover .card-media img,
+.crosshair:focus-within .card-media img { transform: scale(1.035); }
+
+.card-media.is-empty { display: flex; align-items: center; justify-content: center; }
+.card-media.is-empty .mono-label { color: var(--blueprint); opacity: 0.6; text-align: center; padding: 0 1rem; }
+
+/* ---------- Featured stack (Home page) ----------
+   Full-bleed sequential blocks, generous rhythm, fade-up on scroll. */
+.feature-stack { display: flex; flex-direction: column; gap: clamp(3rem, 8vw, 5.5rem); }
+.feature-item .card-media { aspect-ratio: 16 / 10; margin-bottom: 1.25rem; }
+.feature-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+.feature-caption h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.5rem; margin: 0.2rem 0 0.35rem; }
+.feature-caption p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; max-width: 46ch; }
+.feature-caption .feature-link { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blueprint); white-space: nowrap; }
+
+/* ---------- Masonry grid (Projects page) ----------
+   Pure CSS columns — natural varied-height rhythm, no JS needed. */
+.masonry { columns: 3 320px; column-gap: 1.85rem; }
+.masonry .gallery-item { break-inside: avoid; margin-bottom: 1.85rem; display: inline-block; width: 100%; }
+
+.gallery-item .card-media { margin-bottom: 0.9rem; }
+.gallery-item .mono-label { display: block; margin-bottom: 0.15rem; }
+.gallery-item h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; margin: 0.15rem 0 0.4rem; }
+.gallery-item p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+.gallery-item .card-link { display: inline-block; margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blueprint); }
+
+/* Varied aspect ratios create the masonry rhythm */
+.ar-portrait .card-media { aspect-ratio: 3 / 4; }
+.ar-tall .card-media { aspect-ratio: 4 / 5; }
+.ar-square .card-media { aspect-ratio: 1 / 1; }
+.ar-landscape .card-media { aspect-ratio: 4 / 3; }
+.ar-wide .card-media { aspect-ratio: 16 / 10; }
+
+/* ---------- project detail (Liminal Umbrella full write-up) ---------- */
+.project-detail { padding: 0; margin-bottom: 2rem; }
+.project-detail .card-media { aspect-ratio: 16 / 10; margin-bottom: 1.75rem; }
+.project-detail-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+}
+.project-detail h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.6rem; margin: 0; }
+.project-detail .specs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0 0; }
+.project-detail p { color: var(--ink-soft); max-width: 72ch; }
+
+/* ---------- about page ---------- */
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 760px) { .about-layout { grid-template-columns: 1fr; } }
+.about-portrait .card-media { aspect-ratio: 3/4; margin-bottom: 1.25rem; }
+.about-meta { display: flex; flex-direction: column; gap: 0.9rem; }
+.about-meta .meta-row { border-top: 1px solid var(--line); padding-top: 0.7rem; }
+.about-meta .meta-row .mono-label { display: block; margin-bottom: 0.2rem; }
+.about-meta .meta-row div:last-child { font-size: 0.92rem; }
+
+.about-copy p { margin: 0 0 1.3rem; max-width: 66ch; }
+.about-copy p:last-child { margin-bottom: 0; }
+
+/* ---------- contact page ---------- */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.contact-item { border-top: 1px solid var(--line); padding: 1.4rem 0 0; }
+.contact-item .mono-label { display: block; margin-bottom: 0.6rem; }
+.contact-item a, .contact-item p { font-size: 1.02rem; margin: 0; }
+.contact-item a:hover { color: var(--blueprint); }
+
+/* ---------- misc ---------- */
+.divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+.eyebrow-rule { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.eyebrow-rule::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+@media (max-width: 640px) {
+  .masonry { columns: 1 100%; }
+}

@@ -404,6 +404,13 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 }
 @media (max-width: 760px) { .about-layout { grid-template-columns: 1fr; } }
 .about-portrait .card-media { aspect-ratio: 3/4; margin-bottom: 1.25rem; }
+.about-portrait .portrait-circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 3px solid var(--ink);
+  max-width: 260px;
+}
+.about-portrait .portrait-circle img { object-fit: cover; }
 .about-meta { display: flex; flex-direction: column; gap: 0.9rem; }
 .about-meta .meta-row { border-top: 1px solid var(--line); padding-top: 0.7rem; }
 .about-meta .meta-row .mono-label { display: block; margin-bottom: 0.2rem; }

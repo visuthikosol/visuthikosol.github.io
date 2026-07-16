@@ -6,7 +6,7 @@
    borderless photo-forward layout, CSS-only masonry, scroll reveals
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
   --paper: #FAF9F5;
@@ -128,7 +128,7 @@ a { color: inherit; text-decoration: none; }
 
 .brand {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1.05rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -238,6 +238,43 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+/* Stepped photo (matches live site): wide across the top, narrows partway down,
+   text card fills the notch and the right side. */
+.hero { display: flex; align-items: center; min-height: calc(100vh - 7rem); }
+.hero-bleed { position: relative; max-width: 1500px; margin: 0 auto; width: 100%; height: clamp(16rem, 26vw, 23rem); background: var(--paper); }
+.hero-photo {
+  position: absolute;
+  top: 0; left: 0;
+  width: 64.9%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 22.5%, 59.2% 22.5%, 59.2% 100%, 0 100%);
+}
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+.hero-text-card {
+  position: relative;
+  z-index: 2;
+  margin-left: 40%;
+  width: 60%;
+  height: 100%;
+  padding: 10.5rem var(--gutter) clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.hero-text-card h1 { font-size: clamp(1.8rem, 3.6vw, 2.7rem); margin: 0; }
+.hero-text-card h1 .light { font-weight: 300; }
+.hero-text-card h1 .bold { font-weight: 700; }
+.hero-text-card .lede { font-size: clamp(0.95rem, 1.4vw, 1.1rem); margin: 0; max-width: 34ch; }
+.hero-text-card .lede strong { font-weight: 600; }
+@media (max-width: 760px) {
+  .hero { min-height: 0; }
+  .hero-bleed { height: auto; display: flex; flex-direction: column; }
+  .hero-photo { width: 100%; height: 55vw; position: relative; clip-path: none; }
+  .hero-text-card { position: relative; margin-left: 0; width: 100%; height: auto; padding: 2rem var(--gutter); margin-top: -1.5rem; background: var(--paper); }
+}
+
 .btn {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -253,6 +290,7 @@ a { color: inherit; text-decoration: none; }
 .btn-primary:hover { background: var(--blueprint); border-color: var(--blueprint); }
 .btn-ghost { border-color: var(--line); color: var(--ink); }
 .btn-ghost:hover { border-color: var(--blueprint); color: var(--blueprint); }
+.hero-actions .btn { font-size: 0.68rem; padding: 0.6em 1.1em; }
 
 /* ---------- section scaffolding ---------- */
 section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
@@ -280,13 +318,13 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 
 .card-media {
   aspect-ratio: 4 / 3;
-  background: var(--blueprint-tint);
+  background: var(--paper);
   position: relative;
   overflow: hidden;
   border-radius: 3px;
 }
 .card-media img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%; object-fit: contain;
   transition: transform 0.5s cubic-bezier(.2,.7,.3,1);
 }
 .crosshair:hover .card-media img,
@@ -296,26 +334,36 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 .card-media.is-empty .mono-label { color: var(--blueprint); opacity: 0.6; text-align: center; padding: 0 1rem; }
 
 /* ---------- Featured stack (Home page) ----------
-   Full-bleed sequential blocks, generous rhythm, fade-up on scroll. */
-.feature-stack { display: flex; flex-direction: column; gap: clamp(3rem, 8vw, 5.5rem); }
-.feature-item .card-media { aspect-ratio: 16 / 10; margin-bottom: 1.25rem; }
+   One product per full section — image one side, text the other, alternating. */
+.feature-stack { display: flex; flex-direction: column; gap: clamp(3rem, 8vw, 6rem); }
+.feature-item {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  min-height: 70vh;
+}
+.feature-item:nth-child(even) .card-media { order: 2; }
+.feature-item .card-media { aspect-ratio: 4 / 3; margin-bottom: 0; }
 .feature-caption {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  border-top: 1px solid var(--line);
-  padding-top: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
-.feature-caption h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.5rem; margin: 0.2rem 0 0.35rem; }
-.feature-caption p { margin: 0; color: var(--ink-soft); font-size: 0.95rem; max-width: 46ch; }
-.feature-caption .feature-link { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blueprint); white-space: nowrap; }
+.feature-caption h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.8rem; margin: 0.2rem 0 0.4rem; }
+.feature-caption p { margin: 0; color: var(--ink-soft); font-size: 1rem; max-width: 40ch; }
+.feature-caption .feature-link { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blueprint); white-space: nowrap; margin-top: 0.5rem; }
 
-/* ---------- Masonry grid (Projects page) ----------
-   Pure CSS columns — natural varied-height rhythm, no JS needed. */
-.masonry { columns: 3 320px; column-gap: 1.85rem; }
-.masonry .gallery-item { break-inside: avoid; margin-bottom: 1.85rem; display: inline-block; width: 100%; }
+@media (max-width: 760px) {
+  .feature-item { grid-template-columns: 1fr; min-height: 0; }
+  .feature-item:nth-child(even) .card-media { order: 0; }
+}
+
+/* ---------- Grid (Projects page) ----------
+   True CSS grid — uniform image heights so captions align in rows. */
+.masonry { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.85rem; }
+.masonry .gallery-item { display: flex; flex-direction: column; }
 
 .gallery-item .card-media { margin-bottom: 0.9rem; }
 .gallery-item .mono-label { display: block; margin-bottom: 0.15rem; }
@@ -323,12 +371,12 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 .gallery-item p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
 .gallery-item .card-link { display: inline-block; margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blueprint); }
 
-/* Varied aspect ratios create the masonry rhythm */
-.ar-portrait .card-media { aspect-ratio: 3 / 4; }
-.ar-tall .card-media { aspect-ratio: 4 / 5; }
-.ar-square .card-media { aspect-ratio: 1 / 1; }
-.ar-landscape .card-media { aspect-ratio: 4 / 3; }
-.ar-wide .card-media { aspect-ratio: 16 / 10; }
+/* Uniform aspect ratio — every card-media the same shape so rows align */
+.ar-portrait .card-media,
+.ar-tall .card-media,
+.ar-square .card-media,
+.ar-landscape .card-media,
+.ar-wide .card-media { aspect-ratio: 4 / 3; }
 
 /* ---------- project detail (Liminal Umbrella full write-up) ---------- */
 .project-detail { padding: 0; margin-bottom: 2rem; }
@@ -377,5 +425,5 @@ section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 .eyebrow-rule::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
 @media (max-width: 640px) {
-  .masonry { columns: 1 100%; }
+  .masonry { grid-template-columns: 1fr; }
 }

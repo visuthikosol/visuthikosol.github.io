@@ -16,16 +16,16 @@ Put files in `assets/img/`:
 | Filename                     | Used for                          |
 |-------------------------------|------------------------------------|
 | `liminal-umbrella.png`        | ✅ already added                   |
-| `whifflewash.jpg`              | WhiffleWash                        |
-| `oscar.jpg`                    | OSCAR 3D Model Validation Tool     |
-| `ps4-controller.jpg`           | One-Handed PS4 Controller          |
-| `arm-rehab.jpg`                 | Arm Rehabilitation Machine        |
-| `surf-chair.jpg`                | Surf Chair                        |
-| `architectural-design.jpg`      | Architectural Design tile          |
-| `industrial-design.jpg`         | Industrial Design tile             |
-| `cad-modeling.jpg`              | 3D Modeling (CAD) tile             |
-| `rendering-animation.jpg`       | Rendering and Animation tile       |
-| `profile-photo.jpg`             | About page portrait                |
+| `whifflewash.jpg`              | ✅ WhiffleWash                     |
+| `oscar.jpg`                    | ✅ OSCAR 3D Model Validation Tool  |
+| `ps4-controller.jpg`           | ✅ One-Handed PS4 Controller       |
+| `arm-rehab.jpg`                 | ✅ Arm Rehabilitation Machine     |
+| `surf-chair.jpg`                | ✅ Surf Chair                     |
+| `architectural-design.jpg`      | ✅ Architectural Design tile      |
+| `industrial-design.jpg`         | ✅ Industrial Design tile         |
+| `profile-photo.jpg`             | ✅ About page portrait            |
+
+The "3D Modeling (CAD)" and "Rendering and Animation" tiles were removed from the Projects page.
 
 Any image format works (jpg/png/webp) as long as the filename matches —
 just keep the extension consistent with what's in the HTML, or tell me

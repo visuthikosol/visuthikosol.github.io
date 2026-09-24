@@ -76,7 +76,10 @@ P.append(dict(slug='whifflewash', solx='<div class="sol-extra focus">'+fig(W('40
 P.append(dict(slug='oscar', title='OSCAR: 3D Model Validation Tool', label="Shriners Children's Hospital", img='oscar.webp',
   problem="Shriners Children's Hospital needed a reliable way to check the accuracy of its 3D motion-capture system.",
   summary="A 3D modeling calibration tool designed for Shriners Children's Hospital to validate their 3D motion-capture system.",
-  btns=[btn('Project details (PDF)', PDF+'9a614b754d734a43be56bed621c3f4fe.pdf', True)], body=''))
+  btns=[], body=
+  sec('01','How it works', split(ul(['Sized like a 7-year-old&rsquo;s skeleton, with reflective markers at the pelvis and clavicle.','Six lockable universal joints move in all three planes.','Geared dials read each joint angle, so the team knows the true value to compare against.']), fig('../assets/img/oscar-ujoint.webp','Lockable universal joint with angle gear')))+
+  '<section class="specs reveal"><div class="psec-head"><span class="mono-label">02</span><h2>Meeting specs</h2></div><div class="spec-big"><div><strong>5&deg;</strong><span>angle resolution</span></div><div><strong>360&deg;</strong><span>transverse range</span></div><div><strong>6</strong><span>lockable joints</span></div></div><table class="spec-table"><thead><tr><th>Metric</th><th>Marginal</th><th>Ideal</th><th>Prototype</th></tr></thead><tbody><tr><td>Resolution, sagittal</td><td>5&deg;</td><td>1&deg;</td><td>5&deg;</td></tr><tr><td>Resolution, frontal</td><td>5&deg;</td><td>1&deg;</td><td>5&deg;</td></tr><tr><td>Resolution, transverse</td><td>10&deg;</td><td>1&deg;</td><td>10&deg;</td></tr><tr><td>Range, sagittal</td><td>127.5&deg;</td><td>&gt; 127.5&deg;</td><td>208&deg;</td></tr><tr><td>Range, frontal</td><td>89&deg;</td><td>&gt; 89&deg;</td><td>208&deg;</td></tr><tr><td>Range, transverse</td><td>140&deg;</td><td>&gt; 140&deg;</td><td>360&deg;</td></tr></tbody></table></section>'
+))
 
 P.append(dict(slug='one-handed-controller', title='One-Handed PS4 Controller', label='Shirley Ryan AbilityLab', img='ps4-controller.webp',
   problem='After a stroke, 16-year-old Hector could only use his left hand, and a standard controller put half of FIFA out of reach.',
@@ -98,7 +101,7 @@ P.append(dict(slug='arm-rehab', title='Arm Rehabilitation Machine', label='Chula
   problem="Robotic arm rehabilitation speeds stroke recovery, but machines like MIT's InMotion cost more than most clinics can afford.",
   summary="A low-cost arm rehabilitation machine inspired by MIT's InMotion ARM. I designed the handle.",
   btns=[], body=
-  sec('Overview','Summer 2021', "<p>I worked as a research assistant with Dr. Ronnapee Chaichaowarat at Chulalongkorn University's AI Lab, designing the handle for a low-cost arm rehabilitation machine inspired by MIT's InMotion project.</p>")+
+  sec('Overview','Overview', "<p>I worked as a research assistant with Dr. Ronnapee Chaichaowarat at Chulalongkorn University's AI Lab, designing the handle for a low-cost arm rehabilitation machine inspired by MIT's InMotion project.</p>")+
   sec('01','Machine assembly', imgs('11f65dcb6ad646efadf797b02323ed5a.png',1,'Machine assembly'))+
   sec('02','Base design', '<p>Orthographic and isometric CAD views.</p>'+imgs('9070b65765054e5b802f943528a8dd4e.png 7c0c63ebe68840488ef60eb6a90c31c2.png 93f1e5d63160463a9512a4e6256e3afc.png',3,'Base CAD views'))+
   sec('03','Handle design', imgs('d0ee1c55507148aa9625c8f713aab0e2.jpg 4a46e8fccf054e509e14bccdc038667c.png f5dc07ffd83044898d8d9670c5ae8988.jpg',3,'Handle design'))
@@ -155,7 +158,7 @@ P.append(dict(slug='industrial-design', title='Industrial Design', label='Sketch
     ])
 ))
 
-ST={'liminal-umbrella': ('Closing and stowing a wet umbrella while getting into a car is messy, awkward, and hard to control.', 'A handle that closes the umbrella from the grip. Pull, ratchet, done, with no reach up the wet shaft.', '../assets/img/liminal/prototype.webp'), 'whifflewash': ("Laundry pods don't always dissolve. They stick to clothes or get trapped in the drum, and the whole wash is wasted.", 'A Whiffle ball container that agitates the pod and floods it with water, so it fully dissolves and never touches your clothes.', W('4de7dcc3a37f463786779f435e3976c8.png',1800)), 'oscar': ("Shriners Children's relies on 3D motion capture to assess its patients, but had no simple way to check the system's accuracy.", 'OSCAR, a physical calibration tool that lets the team validate its 3D models against a known reference.', None), 'one-handed-controller': ('Hector wanted to play his favorite game, FIFA, again. After a stroke, he only had one working hand.', 'A clamp-on lever system that brings every right-side button to his left hand, held steady on an adjustable stand.', W('f01cb47383814bd59799c06a5e1d4696.png',1800)), 'arm-rehab': ("Robotic arm therapy helps stroke patients recover movement, but machines like MIT's InMotion are priced beyond most clinics.", 'A low-cost rehabilitation machine, with a handle I designed around the grip a recovering patient actually has.', W('11f65dcb6ad646efadf797b02323ed5a.png',1800)), 'surf-chair': ('Everyone got the same factory-made plywood chair. Our job: give it a story.', 'The flat plywood reshaped into the flowing curve of a surfboard: light enough to carry to the beach, comfortable enough to stay.', W('365baf82cdf848f0b253d0cfa673cab6.jpg',1800))}
+ST={'liminal-umbrella': ('Closing and stowing a wet umbrella while getting into a car is messy, awkward, and hard to control.', 'A handle that closes the umbrella from the grip. Pull, ratchet, done, with no reach up the wet shaft.', '../assets/img/liminal/prototype.webp'), 'whifflewash': ("Laundry pods don't always dissolve. They stick to clothes or get trapped in the drum, and the whole wash is wasted.", 'A Whiffle ball container that agitates the pod and floods it with water, so it fully dissolves and never touches your clothes.', W('4de7dcc3a37f463786779f435e3976c8.png',1800)), 'oscar': ("Shriners Children's Hospital needed a reliable way to check the accuracy of its 3D motion-capture system.", "OSCAR, a child-sized model with lockable, angle-marked joints. Set a pose, read the true angles, and compare them to what the system reports.", '../assets/img/oscar.webp'), 'one-handed-controller': ('Hector wanted to play his favorite game, FIFA, again. After a stroke, he only had one working hand.', 'A clamp-on lever system that brings every right-side button to his left hand, held steady on an adjustable stand.', W('f01cb47383814bd59799c06a5e1d4696.png',1800)), 'arm-rehab': ("Robotic arm therapy helps stroke patients recover movement, but machines like MIT's InMotion are priced beyond most clinics.", 'A low-cost rehabilitation machine, with a handle I designed around the grip a recovering patient actually has.', W('11f65dcb6ad646efadf797b02323ed5a.png',1800)), 'surf-chair': ('Everyone got the same factory-made plywood chair. Our job: give it a story.', 'The flat plywood reshaped into the flowing curve of a surfboard: light enough to carry to the beach, comfortable enough to stay.', W('365baf82cdf848f0b253d0cfa673cab6.jpg',1800))}
 head=open(f'{ROOT}/projects.html').read()
 start=head.index('<header class="site-header">'); end=head.index('</header>')+9
 header=head[start:end].replace('href="','href="../').replace('href="../http','href="http').replace(' class="active"','')
@@ -210,7 +213,7 @@ for k,p in enumerate(P):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{p['title']} | Tanik (Nick) Visuthikosol</title>
 <meta name="description" content="{html.escape(p['summary'])}">
-<link rel="stylesheet" href="../css/style.css?v=37">
+<link rel="stylesheet" href="../css/style.css?v=39">
 </head>
 <body class="project-page">
 
@@ -227,10 +230,21 @@ for k,p in enumerate(P):
 {footer}
 
 <div class="lightbox" hidden><button class="lb-close" aria-label="Close">&times;</button><img alt=""></div>
-<script src="../js/main.js?v=37"></script>
+<script src="../js/main.js?v=39"></script>
 </body>
 </html>
 '''
     os.makedirs(f'{ROOT}/work',exist_ok=True)
     open(f'{ROOT}/work/{p["slug"]}.html','w').write(doc)
 print('ok', len(P))
+
+# consistent section numbering on product pages
+import re as _re, glob as _g
+for _f in _g.glob(ROOT+'/work/*.html'):
+    if _f.endswith(('architectural-design.html','industrial-design.html')): continue
+    _t=open(_f).read(); _n=[0]
+    _t=_t.replace('id="infomercial"><div class="psec-head"><span class="mono-label">','id="infomercial"><div class="psec-head"><span class="mono-label vid">')
+    def _r(m):
+        _n[0]+=1; return m.group(1)+f'{_n[0]:02d}'+m.group(2)
+    _t=_re.sub(r'(<div class="psec-head"><span class="mono-label">)[^<]*(</span><h2>)',_r,_t)
+    open(_f,'w').write(_t)

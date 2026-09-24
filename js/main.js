@@ -135,12 +135,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const def = cap.textContent;
     const show = w => { words.forEach(x => x.classList.toggle('on', x === w)); cap.textContent = w.dataset.cap; cap.classList.add('live'); };
     const hide = () => { words.forEach(x => x.classList.remove('on')); cap.textContent = def; cap.classList.remove('live'); };
+    const touch = window.matchMedia('(hover: none)').matches;
     words.forEach(w => {
-      w.addEventListener('mouseenter', () => show(w));
-      w.addEventListener('focus', () => show(w));
-      w.addEventListener('mouseleave', hide);
-      w.addEventListener('blur', hide);
-      w.addEventListener('click', () => w.classList.contains('on') ? hide() : show(w));
+      if (!touch) {
+        w.addEventListener('mouseenter', () => show(w));
+        w.addEventListener('focus', () => show(w));
+        w.addEventListener('mouseleave', hide);
+        w.addEventListener('blur', hide);
+      }
+      w.addEventListener('click', () => (touch && w.classList.contains('on') && cap.textContent === w.dataset.cap) ? hide() : show(w));
     });
     if (window.matchMedia('(hover: none)').matches) {
       

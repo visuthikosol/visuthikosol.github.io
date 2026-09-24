@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!lb) return;
   const big = lb.querySelector('img');
   const close = () => { lb.hidden = true; big.src = ''; document.body.style.overflow = ''; };
-  document.querySelectorAll('.pgrid img, .dev-media img, .final img, .split-media img, .logo-ring img, .bento img, .strip img, .pav img, .plans img, .final-set img, .idea-imgs img, .ch-set img, .models img, .sol-media img, .wide-fig img, .sol-extra img').forEach(img => {
+  document.querySelectorAll('.pgrid img, .dev-media img, .final img, .split-media img, .logo-ring img, .bento img, .strip img, .pav img, .plans img, .final-set img, .idea-imgs img, .ch-set img, .models img, .sol-media img, .wide-fig img, .sol-extra img, .ortho2 img, .duo-media img').forEach(img => {
     img.addEventListener('click', () => {
       big.src = img.currentSrc.replace(/w_\d+,h_\d+/, 'w_2000,h_2000');
       big.alt = img.alt; lb.hidden = false; document.body.style.overflow = 'hidden';
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mq = window.matchMedia('(max-width: 760px)');
   if (!mq.matches) return;
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const sel = '.pgrid:not(.circles):not(.cols-1), .bento, .split.duo .split-media, .idea-imgs';
+  const sel = '.pgrid:not(.circles):not(.cols-1), .bento, .split.duo .split-media, .idea-imgs, .pv-pair, .plans, .final-set';
   document.querySelectorAll(sel).forEach(box => {
     const figs = [...box.children].filter(c => c.tagName === 'FIGURE');
     if (figs.length < 2) return;

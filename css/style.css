@@ -671,7 +671,7 @@ section.hero:not(:has(.hero-bleed)) { display: block; min-height: 0; }
 
 /* touch screens: no hover, so give a quiet cue instead */
 @media (hover: none) {
-  .feature-caption::after { content: "Tap to read more \2192"; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--blueprint); margin-top: .35rem; }
+  .feature-caption::after { content: "Read more \2192"; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--blueprint); margin-top: .35rem; }
 }
 .peek-pill { background: var(--blueprint); box-shadow: 0 8px 22px rgba(29,53,87,.28); transform: translate(16px, 16px) scale(.6); transform-origin: top left; }
 .peek-pill.on { transform: translate(16px, 16px) scale(1); }
@@ -1340,3 +1340,172 @@ figcaption.mono-label, .pav figcaption, .plans figcaption, .ch-set figcaption, .
   .shero-problem { font-size: clamp(2rem, 4.4vw, 3.9rem) !important; line-height: 1.07; letter-spacing: -0.02em; max-width: 17ch !important; margin: 1rem 0 0 !important; }
   .shero-media { height: min(68svh, 640px) !important; }
 }
+
+/* ================= v32: one type system =================
+   Mono caps = names and headings (matches the VISUTHIKOSOL mark)
+   Serif     = statements (problem, solution, About lead)
+   Sans      = body copy                                        */
+:root { --h-track: .08em; }
+.hero-name, .m-name { font-family: var(--font-mono) !important; font-weight: 400 !important; text-transform: uppercase; letter-spacing: .1em !important; line-height: 1.05 !important; }
+@media (min-width: 761px) { .hero-name { font-size: clamp(2rem, 3.6vw, 3.2rem) !important; } }
+@media (max-width: 760px) { .m-name { font-size: 9.2vw !important; margin-top: 1.1rem !important; } }
+
+.shero-text h1, .feature-caption h3, .design-tile h3, .gallery-item h3, .section-head h2,
+.psec-head h2, .dev h2, .final h2, .arch-head h2, .ind-head h2, .specs h2, .lbrand h2,
+.dev-text h3, .pnext strong, .ab-edu strong, .page-title, .hero h1:not(.hero-name) {
+  font-family: var(--font-mono) !important; font-weight: 400 !important; text-transform: uppercase; letter-spacing: var(--h-track); line-height: 1.2 !important;
+}
+.feature-caption h3, .design-tile h3, .gallery-item h3 { font-size: clamp(1rem, 1.5vw, 1.25rem) !important; }
+.section-head h2, .psec-head h2, .dev h2, .final h2, .specs h2, .lbrand h2 { font-size: clamp(.95rem, 1.3vw, 1.1rem) !important; }
+.arch-head h2, .ind-head h2 { font-size: clamp(1.1rem, 1.7vw, 1.45rem) !important; }
+.dev-text h3 { font-size: clamp(1rem, 1.5vw, 1.25rem) !important; }
+.pnext strong { font-size: clamp(1.1rem, 2vw, 1.6rem) !important; }
+.ab-edu strong { font-size: clamp(.9rem, 1.2vw, 1rem) !important; }
+
+/* project title vs problem: title becomes a labelled tag line with a rule */
+.shero-text h1 { font-size: clamp(1rem, 1.5vw, 1.25rem) !important; display: flex; align-items: center; gap: .9rem; width: 100%; margin: .6rem 0 0 !important; color: var(--ink) !important; }
+.shero-text h1::after { content: ""; flex: 1; height: 1px; background: var(--ink); max-width: 7rem; }
+.shero-plabel { margin-top: clamp(2rem, 5vw, 3.5rem) !important; }
+
+/* problem = solution, same serif and size */
+.shero-problem, .sol-text { font-family: var(--font-display) !important; font-weight: 400 !important; font-size: clamp(1.6rem, 3.1vw, 2.6rem) !important; line-height: 1.15 !important; letter-spacing: -0.015em !important; }
+@media (min-width: 761px) { .shero-problem { max-width: 20ch !important; } }
+@media (max-width: 760px) {
+  .shero-problem, .sol-text { font-size: 1.2rem !important; }
+  .shero-text h1 { justify-content: center; }
+  .shero-text h1::before { content: ""; flex: 0 0 1.5rem; height: 1px; background: var(--ink); }
+  .shero-text h1::after { flex: 0 0 1.5rem; }
+}
+
+/* per-project solution sizing */
+.s-one-handed-controller .sol-media { max-width: 1240px; }
+.s-one-handed-controller .sol-media img { max-height: 88vh; }
+.s-surf-chair .sol-media { max-width: 620px; }
+.s-surf-chair .sol-media img { max-height: 46vh; mix-blend-mode: multiply; filter: brightness(1.06) contrast(1.04); }
+
+/* PS4 final design as a fade stack */
+.ps4-stack .dev-media.duo-media { display: flex; gap: 1.25rem; align-items: center; justify-content: center; max-height: 46vh; }
+.ps4-stack .duo-media img { max-width: 48%; max-height: 42vh; object-fit: contain; }
+.ps4-stack .duo-media img:only-child { max-width: 80%; }
+.ps4-stack .dev-num { font-size: .8rem; }
+.ps4-stack .plist { margin-top: .75rem; }
+@media (max-width: 760px) { .ps4-stack .dev-media.duo-media { max-height: 32svh; } .ps4-stack .duo-media img { max-height: 30svh; } }
+
+/* orthographic views: four clean plates, hover to spotlight, click to enlarge */
+.ortho2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.5vw, 2rem); align-items: end; }
+.ortho2 figure { margin: 0; cursor: zoom-in; display: flex; flex-direction: column; align-items: center; }
+.ortho2 img { width: 100%; height: clamp(160px, 22vw, 300px); object-fit: contain; mix-blend-mode: multiply; }
+.ortho2 figcaption { margin-top: .6rem; color: var(--ink-faint); font-size: var(--t-cap); }
+.ortho-hint { margin-top: 1.25rem; color: var(--ink-faint); }
+@media (max-width: 760px) { .ortho2 { grid-template-columns: 1fr 1fr; } .ortho2 img { height: 26svh; } .ortho-hint { display: none; } }
+
+/* Industrial: same chapter layout as Architecture */
+@media (min-width: 761px) {
+  .ind { display: grid; grid-template-columns: minmax(200px, 1fr) 2.6fr; column-gap: clamp(2rem, 5vw, 4.5rem); align-items: start; padding-bottom: clamp(3rem, 7vw, 5rem); }
+  .ind > .ind-head { grid-column: 1; grid-row: 1 / span 12; position: sticky; top: 96px; margin: 0; display: block; }
+  .ind > :not(.ind-head) { grid-column: 2; min-width: 0; margin-top: 0; }
+  .ind > * + :not(.ind-head) { margin-top: clamp(3rem, 7vw, 5rem) !important; }
+  .ind-head p { display: block; margin-top: 1rem; max-width: 34ch; }
+  .final-set { justify-content: flex-start; }
+}
+.hero h1:not(.hero-name) { font-size: clamp(1.4rem, 2.6vw, 2rem) !important; }
+
+/* ================= v33 ================= */
+/* ortho: bigger lift on hover */
+@media (hover: hover) and (pointer: fine) {
+  .ortho2.focus figure:hover { transform: scale(1.35); z-index: 5; }
+  .ortho2 figure:first-child { transform-origin: left center; }
+  .ortho2 figure:last-child { transform-origin: right center; }
+}
+
+/* design project pages: title in the same mono caps as product titles */
+.phero h1 { font-family: var(--font-mono) !important; font-weight: 400 !important; text-transform: uppercase; letter-spacing: var(--h-track); font-size: clamp(1.3rem, 2.2vw, 1.8rem) !important; line-height: 1.2; }
+.design-tile h3 { font-weight: 400 !important; }
+
+/* home + projects captions: context / TITLE / description clearly separated */
+.feature-caption .mono-label, .gallery-item > .mono-label, .design-tile .mono-label { font-size: .64rem; color: var(--ink-faint); letter-spacing: .12em; }
+.feature-caption h3, .gallery-item h3, .design-tile h3 { color: var(--ink); font-size: clamp(1.15rem, 1.8vw, 1.5rem) !important; margin: .55rem 0 0 !important; padding-bottom: .9rem; position: relative; }
+.feature-caption h3::after, .gallery-item h3::after, .design-tile h3::after { content: ""; position: absolute; left: 0; bottom: 0; width: 2.25rem; height: 1px; background: var(--blueprint); transition: width .4s cubic-bezier(.2,.7,.3,1); }
+.feature-caption p, .gallery-item p, .design-tile p { margin-top: .9rem !important; color: var(--ink-soft); }
+a.feature-caption:hover h3::after, a.gallery-item:hover h3::after, a.design-tile:hover h3::after { width: 4.5rem; }
+
+/* projects page: spacious two-column index */
+.masonry { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: clamp(3.5rem, 8vw, 7rem) clamp(2.5rem, 6vw, 5.5rem) !important; }
+.masonry .gallery-item .card-media { aspect-ratio: 4 / 3 !important; margin-bottom: 1.4rem; display: flex; align-items: center; justify-content: center; background: none; }
+.masonry .gallery-item .card-media img { width: 100%; height: 100%; object-fit: contain !important; }
+.masonry .gallery-item:nth-child(even) { margin-top: clamp(3rem, 8vw, 7rem); }
+.masonry .gallery-item p { max-width: 42ch; }
+#products .section-head, #design-projects .section-head { margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+#design-projects { margin-top: clamp(3rem, 8vw, 6rem); }
+@media (max-width: 760px) {
+  .masonry { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .masonry .gallery-item:nth-child(even) { margin-top: 0; }
+}
+
+/* ================= v34: About in the site's system ================= */
+.spec-note { display: block; margin-top: 1rem; color: var(--ink-faint); text-transform: none; letter-spacing: .02em; }
+.spec-big strong { font-family: var(--font-mono) !important; font-weight: 400; letter-spacing: .02em; font-size: clamp(1.6rem, 3.4vw, 2.8rem) !important; }
+
+/* headline: mono caps like VISUTHIKOSOL, solid ink */
+.ab-cap { font-size: var(--t-cap) !important; letter-spacing: .1em; }
+
+/* lead = a statement (serif, same as problem/solution), body = site body */
+.ab-lead { font-family: var(--font-display) !important; font-weight: 400 !important; font-size: clamp(1.4rem, 2.4vw, 2rem) !important; line-height: 1.2 !important; letter-spacing: -0.01em; }
+.ab-lead em { font-weight: 400 !important; }
+.ab-copy p:not(.ab-lead) { font-family: var(--font-body) !important; font-size: var(--t-body) !important; line-height: 1.7 !important; color: var(--ink-soft); max-width: 58ch; }
+.ab-body { align-items: center; }
+.ab-edu li span { font-size: var(--t-small) !important; }
+
+/* off the clock: small mono caps tags, static */
+.ab-off li { font-family: var(--font-mono); font-size: .68rem !important; letter-spacing: .12em; padding: .45rem .9rem !important; border-color: var(--line) !important; color: var(--ink-soft); }
+@media (max-width: 760px) {
+  .ab-lead { font-size: 1.15rem !important; }
+  .ab-off li { font-size: .62rem !important; }
+}
+.ab-off ul { border-top: 0 !important; margin: 0 !important; display: flex !important; flex-wrap: wrap; gap: .5rem; }
+.ab-off li { display: inline-block !important; grid-template-columns: none !important; border: 1px solid var(--line) !important; border-radius: 999px; }
+.ab-off .mono-label { margin-right: .5rem; }
+.spec-table td small { display: block; margin-top: .25rem; font-size: var(--t-cap); font-weight: 400; color: var(--ink-faint); letter-spacing: .02em; line-height: 1.4; }
+
+/* ================= v37 ================= */
+.pv-pair { display: contents; }
+.spec-table th, .spec-table td { white-space: nowrap; }
+.spec-table th:first-child, .spec-table td:first-child { width: 34%; white-space: normal; }
+.spec-table td small { white-space: normal; }
+
+@media (max-width: 760px) {
+  .m-name { font-size: 7.6vw !important; }
+
+  /* home: design projects stack like products */
+  .design-grid[data-stack] { display: block; gap: 0; }
+  .design-grid[data-stack] > .design-tile { position: sticky; top: var(--hdr); height: calc(100svh - var(--hdr)); display: flex; flex-direction: column; justify-content: center; background: var(--paper); box-shadow: 0 0 0 100vmax var(--paper); clip-path: inset(-1px -100vmax 0 -100vmax); border-top: 1px solid var(--line); }
+  .design-grid[data-stack] > .design-tile:first-child { border-top: 0; }
+  .design-grid[data-stack] > .design-tile > * { transform: scale(calc(1 - var(--cover, 0) * .06)); opacity: calc(1 - var(--cover, 0) * .7); transform-origin: center top; }
+
+  /* WhiffleWash: trim duplicates */
+  .sol-extra, #infomercial { display: none !important; }
+
+  /* Architecture by importance */
+  .pav { grid-template-columns: 1fr 1fr; }
+  .pav .pv-c { grid-column: 1 / -1; grid-row: 1; }
+  .pv-pair { display: block; grid-column: 1 / -1; grid-row: 2; }
+  .pav .pv-d, .pav .pv-e { grid-row: 3; }
+  .pav .pv-d img, .pav .pv-e img { max-height: 18svh !important; }
+  .ch-poster { display: none; }
+  .ch-set .ch-m1 img { max-width: 70%; margin: 0 auto; }
+  .plans.fader figure figcaption, .pv-pair figcaption { position: absolute; bottom: -2px; }
+  .models { gap: 1.25rem .75rem; }
+  .models img { max-height: 20svh; width: auto; max-width: 100%; }
+  .models .md4 img { max-height: 16svh; }
+
+  /* Industrial by importance: one final frame, ideas side by side, compact process strip */
+  .final-set.fader { height: 40svh !important; }
+  .ideas { grid-template-columns: 1fr 1fr !important; gap: 1rem !important; margin-top: 2rem !important; }
+  .ideas .idea-imgs.fader { height: 22svh !important; }
+  .ideas .idea .mono-label { font-size: .58rem; }
+  .ind .strip figure { height: 26svh !important; }
+  .ind .strip-wrap { margin-top: 2rem !important; }
+
+  .spec-table th, .spec-table td { padding-right: .35rem; font-size: .75rem !important; }
+}
+@media (max-width: 760px) { .models .md4 img { max-width: 100% !important; } .models figure { min-width: 0; } }

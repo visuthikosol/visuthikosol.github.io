@@ -48,7 +48,7 @@ P.append(dict(slug='liminal-umbrella', title='Liminal Umbrella', label='Northwes
   '<section class="specs reveal"><div class="psec-head"><span class="mono-label">03</span><h2>Meeting specs</h2></div>'+
   '<div class="spec-big"><div><strong>0 in</strong><span>upper-shaft reach<br>target &le; 21 in</span></div><div><strong>20.15 N</strong><span>maximum pull force<br>target &le; 34 N</span></div><div><strong>90&deg;</strong><span>pull direction<br>ideal 90&deg;</span></div></div>'+
   '<table class="spec-table"><thead><tr><th>Metric</th><th>Marginal</th><th>Ideal</th><th>Prototype</th></tr></thead><tbody>'+
-  ''.join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td><td>{d}</td></tr>' for a,b,c,d in [('Pull direction','45&deg; to 135&deg;','90&deg;','90&deg;'),('Reach (in)','&le; 24','&le; 21','0'),('Max pull force (N)','&le; 40','&le; 34','20.15'),('Closed diameter (in)','&le; 3','&le; 3','3'),('Unwrapped diameter (in)','&le; 18','&le; 10','11.8')])+
+  ''.join(f'<tr><td>{a}</td><td>{b}</td><td>{c}</td><td>{d}</td></tr>' for a,b,c,d in [('Pull direction','45&ndash;135&deg;','90&deg;','90&deg;'),('Reach (in)','&le; 24','&le; 21','0'),('Pull force (N)','&le; 40','&le; 34','20.15'),('Closed dia. (in)','&le; 3','&le; 3','3'),('Open dia. (in)','&le; 18','&le; 10','11.8')])+
   '</tbody></table></section>'+
   f'''<section class="lbrand reveal"><div class="psec-head"><span class="mono-label">04</span><h2>Branding</h2></div>
   <div class="brand-board"><img class="brand-mark" src="{LI}wordmark.webp" alt="Liminal wordmark">
@@ -71,7 +71,7 @@ P.append(dict(slug='whifflewash', solx='<div class="sol-extra focus">'+fig(W('40
      ('Conical protrusions','Cone shapes for more contact area, easier printing, and more strength.','ce964329b2874f80b72edfd8d9dcc4d9.png'),
      ('Tighter spacing','Holes and protrusions packed closer for more flow and agitation. Holes resized to 0.6 and 1 cm based on testing, so less detergent escapes.','5710b969bef94e5792db79cfebe7af3a.png'),
      ('Material change','Switched to TPU for flexibility and less noise. The pod now drops in from the top instead of twisting the halves apart. Holes and spikes tuned through factorial testing.','c40251ea7579428bb92d9687e5873bb4.png')],1))+'</div>'
-))
++'<section class="specs reveal"><div class="psec-head"><span class="mono-label">Results</span><h2>Meeting specs</h2></div><div class="spec-big"><div><strong>30% &rarr; 0%</strong><span>pods stuck on clothes</span></div><div><strong>10% &rarr; 0%</strong><span>pods trapped in the drum</span></div><div><strong>10 / 10</strong><span>full dissolution with WhiffleWash</span></div></div><table class="spec-table"><thead><tr><th>Metric</th><th>Marginal</th><th>Ideal</th><th>Prototype</th></tr></thead><tbody><tr><td>Stuck on clothes</td><td>&le; 10%</td><td>0%</td><td>0%</td></tr><tr><td>Trapped in drum</td><td>&le; 5%</td><td>0%</td><td>0%</td></tr><tr><td>Full dissolution</td><td>8 / 10</td><td>10 / 10</td><td>10 / 10</td></tr><tr><td>Hole size (cm)</td><td>&lt; 1.5</td><td>&le; 1.0</td><td>0.6&ndash;1.0</td></tr><tr><td>Wall (mm)</td><td>&ge; 4</td><td>&ge; 6</td><td>6</td></tr></tbody></table></section>'))
 
 P.append(dict(slug='oscar', title='OSCAR: 3D Model Validation Tool', label="Shriners Children's Hospital", img='oscar.webp',
   problem="Shriners Children's Hospital needed a reliable way to check the accuracy of its 3D motion-capture system.",
@@ -86,10 +86,12 @@ P.append(dict(slug='one-handed-controller', title='One-Handed PS4 Controller', l
   sec('01','The user', split(ul(["After his stroke, Hector has limited motor control in his right arm and leg, so he plays with his left hand only.","He can't reach all the buttons and triggers he needs in FIFA, which hurts his gameplay and is frustrating.","Goal: get him back to his previous level of play and enjoyment."]),
       '<div class="collage">'+fig(W('b833464237f74ef3a2f6c9039542aea7.png',1000,'x_0,y_955,w_1170,h_625'),'Hector holding the controller')+fig(W('55a42e28dfe84288b787115019d4224f.png',1000,'x_0,y_955,w_1170,h_625'),'Hector playing one-handed')+'</div>'))+
   sec('02','Final design', '<p>Levers on an axis of rotation, held by a clamp, let Hector press the right face buttons with his left hand like extra triggers. A weighted stand holds everything steady.</p><ol class="parts"><li><a href="#clamp">Clamp and band</a></li><li><a href="#levers">Accessibility levers</a></li><li><a href="#stand">Stand</a></li></ol>')+
-  '<section class="psec reveal" id="clamp"><div class="psec-head"><span class="mono-label">2.1</span><h2>Clamp and band</h2></div><div class="psec-body">'+split(ul(['3D printed in PLA. Holds the levers on their axis so they don\'t slip off the face buttons.','Fits between the triggers and joysticks without blocking any front buttons.','A rod through the center hole is the axis, chosen for smoothness, durability, and a comfortable position found in user testing.']), fig(W('7607658ee5194926a2f4e1c18f8b03d6.png',900),'Clamp')+fig(W('ddff0ee936b840b58b4e17070e86bb99.png',900),'Clamp on controller'), cls='duo')+'</div></section>'+
-  '<section class="psec reveal" id="levers"><div class="psec-head"><span class="mono-label">2.2</span><h2>Accessibility levers</h2></div><div class="psec-body">'+split(ul(['Let Hector use more fingers on his left hand, including sprint mapped to L2.','Four levers sit behind the controller. Pulling toward him presses the right face buttons, validated in user testing.','PLA for strength and cost, with fillets and wider ends for durability and consistent presses.']), fig(W('93c88523bdf34f4cb63766b77dffd8ed.png',900),'Levers')+fig(W('69192538e3334ecfa486fc79dbe2a75a.png',900),'Levers from behind'), flip=True, cls='duo')+'</div></section>'+
-  '<section class="psec reveal" id="stand"><div class="psec-head"><span class="mono-label">2.3</span><h2>Stand</h2></div><div class="psec-body">'+split(ul(['A short, weighted mic stand suited to how Hector grips the controller, for comfort over long sessions.','The 1.02 lb weighted base keeps it stable during play.','180 degree rotation and adjustable height, added from user testing feedback.']), fig(W('60f1a7fbbf974df1892600f4909eac17.png',900),'Stand'))+'</div></section>'+
-  sec('03','Orthographic views', bento('f01cb47383814bd59799c06a5e1d4696.png 789629b0696e41bb8c0323ccf29a1329.png 61f67611447b46dfa3bf42095a0194ac.png 88270d5e5afe4c9eac00011599b5f310.png','ortho','Orthographic view of full assembly'))
+  '<div class="dev-stack ps4-stack" data-stack>'+''.join(f'''<div class="dev-step" id="{sid}"><figure class="dev-media duo-media">{''.join(f'<img src="{W(im,900)}" alt="{t}" loading="lazy">' for im in ims.split())}</figure><div class="dev-text"><span class="dev-num">2.{n}</span><h3>{t}</h3><ul class="plist">{''.join(f'<li>{x}</li>' for x in pts)}</ul></div></div>''' for n,(sid,t,ims,pts) in enumerate([
+    ('clamp','Clamp and band','7607658ee5194926a2f4e1c18f8b03d6.png ddff0ee936b840b58b4e17070e86bb99.png',['3D printed PLA clamp holds the levers on their axis.','Fits between triggers and joysticks without blocking a button.','A center rod acts as the axis, tuned in user testing.']),
+    ('levers','Accessibility levers','93c88523bdf34f4cb63766b77dffd8ed.png 69192538e3334ecfa486fc79dbe2a75a.png',['Four levers behind the controller press the right face buttons.','Sprint moves to L2, so more fingers stay in play.','Filleted, wider ends for strength and consistent presses.']),
+    ('stand','Stand','60f1a7fbbf974df1892600f4909eac17.png',['Short, weighted mic stand matched to his grip.','1.02 lb base keeps it steady mid-game.','180 degree rotation and adjustable height from testing feedback.'])],1))+'</div>'+
+  '<section class="specs reveal"><div class="psec-head"><span class="mono-label">Results</span><h2>Meeting specs</h2></div><div class="spec-big"><div><strong>4.0 / 5</strong><span>access to buttons</span></div><div><strong>4.0 / 5</strong><span>ergonomics</span></div><div><strong>0 mm</strong><span>target controller movement, held by a weighted stand</span></div></div><table class="spec-table"><thead><tr><th>Metric</th><th>Marginal</th><th>Ideal</th><th>Prototype</th></tr></thead><tbody><tr><td>Buttons reached</td><td>3 / 4</td><td>4 / 4</td><td>4 / 4<small>via levers</small></td></tr><tr><td>Button access</td><td>3 / 5</td><td>5 / 5</td><td>4.0 / 5<small>sprint on L2</small></td></tr><tr><td>Ergonomics</td><td>3 / 5</td><td>5 / 5</td><td>4.0 / 5<small>fitted stand</small></td></tr><tr><td>Comfort</td><td>3 / 5</td><td>5 / 5</td><td>3.5 / 5<small>adjustable height</small></td></tr><tr><td>Stand rotation</td><td>90&deg;</td><td>180&deg;</td><td>180&deg;<small>weighted base</small></td></tr></tbody></table></section>'+
+  sec('03','Orthographic views', '<div class="ortho2 focus">'+''.join(fig(W(f,1400),'Orthographic view of full assembly','',f'View 0{k+1}') for k,f in enumerate('f01cb47383814bd59799c06a5e1d4696.png 789629b0696e41bb8c0323ccf29a1329.png 61f67611447b46dfa3bf42095a0194ac.png 88270d5e5afe4c9eac00011599b5f310.png'.split()))+'</div>')
 ))
 
 P.append(dict(slug='arm-rehab', title='Arm Rehabilitation Machine', label='Chulalongkorn University AI Lab', img='arm-rehab.webp',
@@ -115,7 +117,7 @@ P.append(dict(slug='architectural-design', title='Architectural Design', label='
   btns=[], body=
   '<section class="arch-proj reveal"><div class="arch-head"><span class="mono-label">Project 01</span><h2>TR&Aring;RAMMEN Pavilion</h2>'+
   "<p class='arch-text'>A pavilion in the park next to the SMK museum, inspired by Rodin's <em>The Head of Sorrow</em> and Utzon's Can Lis. A calm wooden structure frames the sculpture against trees and a pond, while large natural rocks serve as seating and lead visitors out into the landscape. Light shifts across the space through the day and hits the sculpture at noon.</p>"+'</div>'+
-  '<div class="pav focus">'+fig(W('89124fa8255b432cbb1379733fe1a6d9.png',1600),'Pavilion plan and section','pv-a','Plan and section')+fig(W('372ee243775344b987982f11591fe113.png',1600),'Pavilion plan and section','pv-b','Plan and section')+fig(W('13da2d83d3184379817cc9c41ce00761.png',1600),'Pavilion lighting diagram','pv-c','Lighting diagram')+fig(W('db6df9794b70468387337bac4b136805.png',900),'Sculpture sketch','pv-d','Sculpture study')+fig(W('7b2d6afc52c34dd1af60969d4ae08728.png',900),'Sculpture sketch','pv-e','Sculpture study')+'</div>'
+  '<div class="pav focus">'+'<div class="pv-pair">'+fig(W('89124fa8255b432cbb1379733fe1a6d9.png',1600),'Pavilion plan and section','pv-a','Plan and section')+fig(W('372ee243775344b987982f11591fe113.png',1600),'Pavilion plan and section','pv-b','Plan and section')+'</div>'+fig(W('13da2d83d3184379817cc9c41ce00761.png',1600),'Pavilion lighting diagram','pv-c','Lighting diagram')+fig(W('db6df9794b70468387337bac4b136805.png',900),'Sculpture sketch','pv-d','Sculpture study')+fig(W('7b2d6afc52c34dd1af60969d4ae08728.png',900),'Sculpture sketch','pv-e','Sculpture study')+'</div>'
   '</section>'+
   '<section class="arch-proj reveal"><div class="arch-head"><span class="mono-label">Project 02</span><h2>The Living Room Culture House</h2>'+
   ("<p class='arch-text'>The living room of N&oslash;rrebro, built into Hans Tavsens Plads park with a public path running through it. Site analysis of foot traffic, demographics, and sun paths shaped the plan.</p><p>A cooking school sits 90 cm below ground for focus, a sheltered zone leads up to a street-level caf&eacute;, and gardens, workspaces, and a fireplace make it a neighborhood gathering place.</p>")+'</div>'+fig(W('e3f8bff0fbde4897a1fefaebf0ed4706.png',1400),'Culture house poster','ch-poster')+
@@ -182,7 +184,7 @@ for k,p in enumerate(P):
         <figure class="shero-media reveal reveal-delay-1"><img src="{'../assets/img/'+p['img']}" alt="{html.escape(p['title'])}"></figure>
       </div>
     </header>
-    <section class="solution reveal">
+    <section class="solution reveal s-{p['slug']}">
       <span class="mono-label">The solution</span>
       <p class="sol-text">{html.escape(sol)}</p>
       {solfig}
@@ -208,7 +210,7 @@ for k,p in enumerate(P):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{p['title']} | Tanik (Nick) Visuthikosol</title>
 <meta name="description" content="{html.escape(p['summary'])}">
-<link rel="stylesheet" href="../css/style.css?v=31">
+<link rel="stylesheet" href="../css/style.css?v=37">
 </head>
 <body class="project-page">
 
@@ -225,7 +227,7 @@ for k,p in enumerate(P):
 {footer}
 
 <div class="lightbox" hidden><button class="lb-close" aria-label="Close">&times;</button><img alt=""></div>
-<script src="../js/main.js?v=31"></script>
+<script src="../js/main.js?v=37"></script>
 </body>
 </html>
 '''

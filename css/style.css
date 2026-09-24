@@ -1273,3 +1273,70 @@ section.hero:not(:has(.hero-bleed)) { display: block; min-height: 0; }
   .split.duo .split-media.fader { width: 100%; }
   .pgrid.framed.fader > figure img { border-radius: 18px; }
 }
+
+/* ================= v30 ================= */
+/* one body scale across the site */
+:root { --t-body: .95rem; --t-small: .85rem; --t-cap: .68rem; }
+.psec-body > p, .plist, .plist li, .dev-text p, .arch-text, .arch-head p, .ind-head p, .ab-copy p:not(.ab-lead), .feature-caption p, .design-tile p, .lede, .m-lede, .spec-table, .steps li, .split-text p { font-size: var(--t-body) !important; line-height: 1.6; }
+.spec-big span, .sw span, .ab-edu li span, .strip-count { font-size: var(--t-small); }
+figcaption.mono-label, .pav figcaption, .plans figcaption, .ch-set figcaption, .models figcaption, .sol-extra figcaption { font-size: var(--t-cap) !important; }
+@media (max-width: 760px) { :root { --t-body: .9rem; --t-small: .8rem; --t-cap: .62rem; } }
+
+/* hero on project pages: centered problem, matched to the solution */
+.shero-grid { display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(1.5rem, 4vw, 2.5rem); }
+.shero-text { display: flex; flex-direction: column; align-items: center; }
+.shero-plabel { color: var(--blueprint); margin-top: clamp(1.25rem, 3vw, 2rem); }
+.shero-problem { font-family: var(--font-display); font-size: clamp(1.6rem, 3.4vw, 2.9rem) !important; line-height: 1.15; letter-spacing: -0.015em; max-width: 24ch !important; margin: 1rem auto 0 !important; }
+.shero-media { height: min(46vh, 480px) !important; }
+@media (max-width: 760px) { .shero-problem { font-size: 1.15rem !important; max-width: 26ch !important; } .shero-media { order: 0; height: 30svh !important; } }
+
+/* WhiffleWash solution row captions */
+.sol-extra { align-items: flex-end; }
+.sol-extra figure { display: flex; flex-direction: column; align-items: center; max-width: 180px; }
+.sol-extra figcaption { text-align: center; white-space: nowrap; letter-spacing: .06em; }
+
+/* architecture: chapters with a sticky title column, drawings scroll beside it */
+@media (min-width: 761px) {
+  .arch-proj { display: grid; grid-template-columns: minmax(200px, 1fr) 2.6fr; column-gap: clamp(2rem, 5vw, 4.5rem); align-items: start; padding-bottom: clamp(3rem, 7vw, 5rem); }
+  .arch-proj > .arch-head { grid-column: 1; grid-row: 1 / span 12; position: sticky; top: 96px; margin: 0; }
+  .arch-proj > :not(.arch-head) { grid-column: 2; min-width: 0; }
+  .arch-head h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important; }
+  .arch-head .arch-text, .arch-head p { margin: 1rem 0 0; max-width: 34ch; color: var(--ink-soft); }
+  .arch-proj > * + :not(.arch-head) { margin-top: clamp(2.5rem, 6vw, 4.5rem); }
+  .arch-proj > .pav, .arch-proj > .ch-poster, .arch-proj > .models, .arch-proj > .bento.wall { margin-top: 0; }
+}
+.ch-poster { margin: 0; cursor: zoom-in; }
+.ch-poster img { width: 100%; height: auto; }
+@media (max-width: 760px) {
+  .arch-proj { padding-top: 2.5rem; }
+  .arch-head { border-left: 2px solid var(--ink); padding-left: .9rem; margin-bottom: 1.5rem; }
+  .arch-proj + .arch-proj { margin-top: 1.5rem; }
+}
+
+/* landing name */
+.hero-name { font-weight: 700; letter-spacing: -0.02em; }
+.hero-name a { color: inherit; }
+@media (max-width: 760px) {
+  .m-hero { padding-top: 1.25rem; }
+  .m-photo { display: block; height: 34svh; border-radius: 999px 999px 24px 24px; overflow: hidden; }
+  .m-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 35%; }
+  .m-name { font-size: 15vw; margin: 1rem 0 0; letter-spacing: -0.035em; }
+  .m-lede { margin-top: .9rem; max-width: 34ch; }
+}
+
+/* about */
+.ab-lead em { font-style: normal; font-weight: 700; color: var(--blueprint); }
+
+/* no hover effects on things that aren't links */
+.ab-off li:hover { background: none; color: inherit; }
+.ab-edu li:hover { padding-left: 0; }
+.sw:hover i { transform: none; }
+.scroll-cue { display: none !important; }
+@media (min-width: 761px) { .hero-name { font-size: clamp(2.6rem, 5.2vw, 4.8rem) !important; line-height: 1; } }
+/* v31: desktop hero back to side-by-side; mobile stays centered */
+@media (min-width: 761px) {
+  .shero-grid { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; text-align: left; gap: clamp(2rem, 5vw, 5rem); }
+  .shero-text { align-items: flex-start; }
+  .shero-problem { font-size: clamp(2rem, 4.4vw, 3.9rem) !important; line-height: 1.07; letter-spacing: -0.02em; max-width: 17ch !important; margin: 1rem 0 0 !important; }
+  .shero-media { height: min(68svh, 640px) !important; }
+}

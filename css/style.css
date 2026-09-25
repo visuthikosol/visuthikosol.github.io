@@ -1596,10 +1596,10 @@ a.feature-caption:hover h3::after, a.gallery-item:hover h3::after, a.design-tile
   .masonry[data-stack-m] .gallery-item h3 { min-height: 0; }
 }
 
-/* ================= v46: force Products grid alignment, ignore any stray margins ================= */
+/* ================= v51: Products grid, no stagger, every row lines up ================= */
 @media (min-width: 761px) {
-  #products .masonry .gallery-item { margin-top: 0 !important; }
-  #products .masonry .gallery-item:nth-child(3n+2) { margin-top: clamp(2rem, 5vw, 3.5rem) !important; }
+  #products .masonry .gallery-item,
+  #products .masonry .gallery-item:nth-child(n) { margin-top: 0 !important; }
 }
 
 /* WhiffleWash: small "caught inside" result photo beside the spec numbers */

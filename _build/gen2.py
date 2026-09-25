@@ -1,8 +1,28 @@
 import os, html
 ROOT='/home/claude/site'
 PDF='https://f9dbab49-ed05-4f20-ac02-bf4abc8728ee.filesusr.com/ugd/10d882_'
+LOCAL = {
+    '177e028357684a59a2d33a03285a786b': 'ww/177e028357684a59a2d33a03285a786b.webp',
+    '856e391ecc4e450d9460698c093141b9': 'ww/856e391ecc4e450d9460698c093141b9.webp',
+    '588e4bf9325f4fb285ebdfab22f73437': 'ww/588e4bf9325f4fb285ebdfab22f73437.webp',
+    'ce964329b2874f80b72edfd8d9dcc4d9': 'ww/ce964329b2874f80b72edfd8d9dcc4d9.webp',
+    '5710b969bef94e5792db79cfebe7af3a': 'ww/5710b969bef94e5792db79cfebe7af3a.webp',
+    '51e77537ca2f4c648886955bf24ad704': 'ww/51e77537ca2f4c648886955bf24ad704.webp',
+    'a9948c1a244b495a9ef32b254769d073': 'ww/a9948c1a244b495a9ef32b254769d073.webp',
+    '744e224cf0ed46debc5721f59a2f42fc': 'ww/744e224cf0ed46debc5721f59a2f42fc.webp',
+    '40197e43fb6a4f8f9f9134e8b71c6bd3': 'ww/40197e43fb6a4f8f9f9134e8b71c6bd3.webp',
+    '4fd2f6aba5c74a99a0fc0cc81238d413': 'ww/4fd2f6aba5c74a99a0fc0cc81238d413.webp',
+    'c40251ea7579428bb92d9687e5873bb4': 'ww/c40251ea7579428bb92d9687e5873bb4.webp',
+    '4de7dcc3a37f463786779f435e3976c8': 'ww/4de7dcc3a37f463786779f435e3976c8.webp',
+    'e55fa2153e2f4ed3ad35e5f74ea6931f': 'ww/e55fa2153e2f4ed3ad35e5f74ea6931f.webp',
+    '72d2876967074dddb6c2288d151a3d80': 'ww/72d2876967074dddb6c2288d151a3d80.webp',
+    'c70f6595048f4105bcdeb693b390ea63': 'ww/c70f6595048f4105bcdeb693b390ea63.webp',
+    'cc50744aa8d045968aea19249d13dfc0': 'ww/cc50744aa8d045968aea19249d13dfc0.webp',
+}
 def W(f, w=1200, crop=None):
     i,ext=f.split('.')
+    if i in LOCAL:
+        return '../assets/img/' + LOCAL[i]
     c=f'crop/{crop}/' if crop else ''
     return f'https://static.wixstatic.com/media/10d882_{i}~mv2.{ext}/v1/{c}fit/w_{w},h_{w},q_85,enc_auto/{i}.{ext}'
 def fig(url, alt, cls='', cap=''):
@@ -71,7 +91,7 @@ P.append(dict(slug='whifflewash', solx='<div class="sol-extra focus">'+fig(W('40
      ('Conical protrusions','Cone shapes for more contact area, easier printing, and more strength.','ce964329b2874f80b72edfd8d9dcc4d9.png'),
      ('Tighter spacing','Holes and protrusions packed closer for more flow and agitation. Holes resized to 0.6 and 1 cm based on testing, so less detergent escapes.','5710b969bef94e5792db79cfebe7af3a.png'),
      ('Material change','Switched to TPU for flexibility and less noise. The pod now drops in from the top instead of twisting the halves apart. Holes and spikes tuned through factorial testing.','c40251ea7579428bb92d9687e5873bb4.png')],1))+'</div>'
-+'<section class="specs reveal"><div class="psec-head"><span class="mono-label">Results</span><h2>Meeting specs</h2></div><div class="spec-big"><div><strong>30% &rarr; 0%</strong><span>pods stuck on clothes</span></div><div><strong>10% &rarr; 0%</strong><span>pods trapped in the drum</span></div><div><strong>10 / 10</strong><span>full dissolution with WhiffleWash</span></div></div><table class="spec-table"><thead><tr><th>Metric</th><th>Marginal</th><th>Ideal</th><th>Prototype</th></tr></thead><tbody><tr><td>Stuck on clothes</td><td>&le; 10%</td><td>0%</td><td>0%</td></tr><tr><td>Trapped in drum</td><td>&le; 5%</td><td>0%</td><td>0%</td></tr><tr><td>Full dissolution</td><td>8 / 10</td><td>10 / 10</td><td>10 / 10</td></tr><tr><td>Hole size (cm)</td><td>&lt; 1.5</td><td>&le; 1.0</td><td>0.6&ndash;1.0</td></tr><tr><td>Wall (mm)</td><td>&ge; 4</td><td>&ge; 6</td><td>6</td></tr></tbody></table></section>'))
++'<section class="specs reveal"><div class="psec-head"><span class="mono-label">Results</span><h2>Meeting specs</h2></div><div class="specs-row"><div class="spec-big"><div><strong>30% &rarr; 0%</strong><span>pods stuck on clothes</span></div><div><strong>10% &rarr; 0%</strong><span>pods trapped in the drum</span></div><div><strong>10 / 10</strong><span>full dissolution with WhiffleWash</span></div></div><figure class="result-shot"><img src="../assets/img/ww/residue-caught.webp" alt="Undissolved pod residue caught inside the WhiffleWash ball" loading="lazy"><figcaption class="mono-label">Caught inside the ball,<br>not your clothes</figcaption></figure></div><table class="spec-table"><thead><tr><th>Metric</th><th>Marginal</th><th>Ideal</th><th>Prototype</th></tr></thead><tbody><tr><td>Stuck on clothes</td><td>&le; 10%</td><td>0%</td><td>0%</td></tr><tr><td>Trapped in drum</td><td>&le; 5%</td><td>0%</td><td>0%</td></tr><tr><td>Full dissolution</td><td>8 / 10</td><td>10 / 10</td><td>10 / 10</td></tr><tr><td>Hole size (cm)</td><td>&lt; 1.5</td><td>&le; 1.0</td><td>0.6&ndash;1.0</td></tr><tr><td>Wall (mm)</td><td>&ge; 4</td><td>&ge; 6</td><td>6</td></tr></tbody></table></section>'))
 
 P.append(dict(slug='oscar', title='OSCAR: 3D Model Validation Tool', label="Shriners Children's Hospital", img='oscar.webp',
   problem="Shriners Children's Hospital needed a reliable way to check the accuracy of its 3D motion-capture system.",
@@ -173,7 +193,7 @@ for k,p in enumerate(P):
 
     if p['slug'] in ST:
         prob,sol,simg=ST[p['slug']]
-        solfig=f'<figure class="sol-media"><img src="{simg}" alt="{html.escape(p["title"])} final design" loading="lazy"></figure>' if simg else ''
+        solfig=f'<figure class="sol-media"><img src="{simg}" alt="{html.escape(p["title"])} final design" loading="lazy"></figure>' if (simg and p['slug']!='oscar') else ''
         hero=f'''    <header class="shero">
       <a class="pback mono-label" href="../projects.html">&larr; All projects</a>
       <div class="shero-grid">
@@ -213,7 +233,7 @@ for k,p in enumerate(P):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{p['title']} | Tanik (Nick) Visuthikosol</title>
 <meta name="description" content="{html.escape(p['summary'])}">
-<link rel="stylesheet" href="../css/style.css?v=39">
+<link rel="stylesheet" href="../css/style.css?v=40">
 </head>
 <body class="project-page">
 
@@ -230,7 +250,7 @@ for k,p in enumerate(P):
 {footer}
 
 <div class="lightbox" hidden><button class="lb-close" aria-label="Close">&times;</button><img alt=""></div>
-<script src="../js/main.js?v=39"></script>
+<script src="../js/main.js?v=40"></script>
 </body>
 </html>
 '''

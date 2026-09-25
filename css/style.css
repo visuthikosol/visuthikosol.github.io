@@ -241,7 +241,7 @@ a { color: inherit; text-decoration: none; }
 /* Stepped photo (matches live site): wide across the top, narrows partway down,
    text card fills the notch and the right side. */
 .hero { display: flex; align-items: center; min-height: calc(100vh - 7rem); }
-.hero-bleed { position: relative; max-width: 1500px; margin: 0 auto; width: 100%; height: clamp(16rem, 26vw, 23rem); background: var(--paper); }
+.hero-bleed { position: relative; max-width: 1500px; margin: 0 auto; width: 100%; height: clamp(22rem, 34vw, 32rem); background: var(--paper); }
 .hero-photo {
   position: absolute;
   top: 0; left: 0;
@@ -1134,6 +1134,7 @@ section.hero:not(:has(.hero-bleed)) { display: block; min-height: 0; }
 .ind .strip-wrap { margin-top: clamp(4rem, 9vw, 7rem); }
 .strip { gap: clamp(1.5rem, 3vw, 3rem); }
 @media (max-width: 760px) {
+  .specs { padding-top: 2rem; margin-top: 2rem; }
   .ind { padding-top: 3.5rem; }
   .final-set, .final-set.n2, .final-set.n4 { gap: 1.75rem 1rem; }
   .final-set .final-label { margin-bottom: -.5rem; }
@@ -1437,6 +1438,7 @@ a.feature-caption:hover h3::after, a.gallery-item:hover h3::after, a.design-tile
 .masonry .gallery-item p { max-width: 42ch; }
 #products .section-head, #design-projects .section-head { margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
 #design-projects { margin-top: clamp(3rem, 8vw, 6rem); }
+@media (max-width: 760px) { #design-projects { margin-top: 1.5rem; } #products .section-head, #design-projects .section-head { margin-bottom: 1rem; } }
 @media (max-width: 760px) {
   .masonry { grid-template-columns: 1fr !important; gap: 3rem !important; }
   .masonry .gallery-item:nth-child(even) { margin-top: 0; }
@@ -1525,3 +1527,93 @@ a.feature-caption:hover h3::after, a.gallery-item:hover h3::after, a.design-tile
 .ab-lead { font-family: var(--font-mono) !important; font-weight: 300 !important; letter-spacing: .01em !important; line-height: 1.3 !important; font-size: clamp(1.3rem, 2.2vw, 1.8rem) !important; }
 .ab-lead em { font-weight: 400 !important; }
 @media (max-width: 760px) { .ab-lead { font-size: 1.08rem !important; } .ab-cap { min-height: 2.8em; } }
+@media (min-width: 761px) { .masonry { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: clamp(2.25rem, 4vw, 3.5rem) !important; } .masonry .gallery-item:nth-child(even) { margin-top: 0 !important; } .masonry .gallery-item:nth-child(3n+2) { margin-top: clamp(2.5rem, 5vw, 4rem); } .masonry .gallery-item:nth-child(3n) { margin-top: clamp(1rem, 2vw, 1.5rem); } }
+
+/* ================= v40 ================= */
+/* projects: 3 up, no oversized heading */
+@media (min-width: 761px) {
+  .masonry { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: clamp(2.5rem, 5vw, 4rem) clamp(1.75rem, 3.5vw, 3rem) !important; }
+  .masonry .gallery-item:nth-child(even) { margin-top: 0 !important; }
+  .masonry .gallery-item:nth-child(3n+2) { margin-top: clamp(2rem, 5vw, 3.5rem); }
+}
+
+/* sketches: bigger lift on hover in Architecture and Industrial */
+.arch-proj .bento figure:hover img, .arch-proj .pgrid figure:hover img,
+.arch-proj .pav figure:hover, .arch-proj .plans figure:hover, .arch-proj .models figure:hover,
+.ind .final-set figure:hover, .ind .idea-imgs figure:hover, .ind .strip figure:hover {
+  transform: scale(1.16) !important;
+}
+.focus figure:hover { transform: scale(1.16) !important; }
+
+/* nav: Projects back on mobile */
+@media (max-width: 760px) {
+  .nav-links li:has(a[href$="projects.html"]) { display: list-item !important; }
+  .site-footer a[href$="projects.html"] { display: inline !important; }
+
+  /* landing: tighten gap under Design Projects heading */
+  .design-grid[data-stack] > .design-tile { justify-content: flex-start; padding-top: 1.1rem; }
+  .design-grid[data-stack] .card-media { margin-top: .6rem; }
+}
+
+/* ================= v41: About, mobile hero ================= */
+@media (max-width: 760px) {
+  .ab-hero { display: flex; flex-direction: column; padding-top: 1.75rem; }
+  .ab-kicker { order: -1; }
+  .ab-top { order: -1; display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.5rem; }
+  .ab-top .ab-portrait { flex: 0 0 auto; width: 30vw; aspect-ratio: 1; margin: 0; border-width: 2px; }
+  .ab-top .ab-lead { flex: 1; margin: 0 !important; font-size: 1.05rem !important; line-height: 1.32 !important; }
+  .ab-words { margin-top: 0; }
+  .ab-cap { order: 3; }
+  .ab-body { padding-top: 1.5rem; }
+  .ab-body .ab-portrait { display: none; }
+  .ab-copy .ab-lead { display: none; }
+}
+
+/* ================= v43 ================= */
+/* Products grid: titles align across rows regardless of 1- or 2-line names */
+@media (min-width: 761px) {
+  .masonry .gallery-item > .mono-label { min-height: 2.4em; display: block; }
+  .masonry .gallery-item h3 { min-height: 3.6em; }
+}
+
+/* Design Projects: centered pair with real breathing room (home uses .design-grid, Projects page uses .design-masonry) */
+@media (min-width: 761px) {
+  #design-projects .design-grid,
+  #design-projects .design-masonry { grid-template-columns: repeat(2, minmax(280px, 420px)) !important; justify-content: center; gap: clamp(4rem, 10vw, 10rem) !important; }
+}
+
+/* Mobile Products: same pinned scroll-and-fade rhythm as the home page */
+@media (max-width: 760px) {
+  .masonry[data-stack-m] { display: block; gap: 0; }
+  .masonry[data-stack-m] .gallery-item {
+    position: sticky; top: var(--hdr); height: calc(100svh - var(--hdr));
+    display: flex; flex-direction: column; justify-content: center; padding-top: 1.1rem;
+    background: var(--paper); box-shadow: 0 0 0 100vmax var(--paper); clip-path: inset(-1px -100vmax 0 -100vmax);
+    border-top: 1px solid var(--line);
+  }
+  .masonry[data-stack-m] .gallery-item:first-child { border-top: 0; }
+  .masonry[data-stack-m] .gallery-item > * { transform: scale(calc(1 - var(--cover, 0) * .06)); opacity: calc(1 - var(--cover, 0) * .7); transform-origin: center top; }
+  .masonry[data-stack-m] .gallery-item h3 { min-height: 0; }
+}
+
+/* ================= v46: force Products grid alignment, ignore any stray margins ================= */
+@media (min-width: 761px) {
+  #products .masonry .gallery-item { margin-top: 0 !important; }
+  #products .masonry .gallery-item:nth-child(3n+2) { margin-top: clamp(2rem, 5vw, 3.5rem) !important; }
+}
+
+/* WhiffleWash: small "caught inside" result photo beside the spec numbers */
+.specs-row { display: flex; align-items: center; justify-content: space-between; gap: clamp(2rem, 6vw, 5rem); flex-wrap: wrap; }
+.specs-row .spec-big { flex: 1 1 420px; margin: 0; }
+.result-shot { flex: 0 0 auto; margin: 0; text-align: center; }
+.result-shot img { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 1px solid var(--line); }
+.result-shot figcaption { margin-top: .6rem; max-width: 120px; color: var(--ink-faint); line-height: 1.4; }
+@media (max-width: 760px) { .specs-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; } .specs-row .spec-big { flex-basis: auto; width: 100%; } .result-shot { align-self: flex-start; } .result-shot img { width: 76px; height: 76px; } }
+
+/* WhiffleWash: solution photo smaller (source photo is soft when blown up large) */
+.s-whifflewash .sol-media { max-width: 460px; }
+.s-whifflewash .sol-media img { max-height: 50vh; }
+
+/* Material change ring: shift image up so the bottom of the ball isn't cropped off */
+.dev-media.ring .ringwrap img { transform: translateY(2%) scale(.94); }
+.dev-media.ring:hover .ringwrap img { transform: translateY(2%) scale(1); }

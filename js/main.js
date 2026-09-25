@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Stacked sections (home products, project development): each item pins, the next covers it.
 document.addEventListener('DOMContentLoaded', () => {
-  const stacks = [...document.querySelectorAll('[data-stack]')];
+  const stacks = [...document.querySelectorAll('[data-stack], [data-stack-m]')];
   if (!stacks.length) return;
   const header = document.querySelector('.site-header');
   const hdrH = () => (header ? header.offsetHeight : 0);
@@ -203,4 +203,18 @@ document.addEventListener('DOMContentLoaded', () => {
     box.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
     box.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { show(i + (dx < 0 ? 1 : -1)); run(); } x0 = null; });
   });
+});
+
+// About, mobile: pull the portrait up into the hero so photo + punchline read as one moment
+document.addEventListener('DOMContentLoaded', () => {
+  if (!window.matchMedia('(max-width: 760px)').matches) return;
+  const hero = document.querySelector('.ab-hero');
+  const portrait = document.querySelector('.ab-portrait');
+  const lead = document.querySelector('.ab-lead');
+  if (!hero || !portrait) return;
+  const top = document.createElement('div');
+  top.className = 'ab-top';
+  top.appendChild(portrait);
+  if (lead) top.appendChild(lead);
+  hero.insertBefore(top, hero.firstChild);
 });

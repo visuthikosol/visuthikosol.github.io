@@ -341,7 +341,7 @@ for k,p in enumerate(P):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{p['title']} | Tanik (Nick) Visuthikosol</title>
 <meta name="description" content="{html.escape(p['summary'])}">
-<link rel="stylesheet" href="../css/style.css?v=61">
+<link rel="stylesheet" href="../css/style.css?v=67">
 </head>
 <body class="project-page p-{p["slug"]}">
 
@@ -358,7 +358,7 @@ for k,p in enumerate(P):
 {footer}
 
 <div class="lightbox" hidden><button class="lb-close" aria-label="Close">&times;</button><img alt=""></div>
-<script src="../js/main.js?v=61"></script>
+<script src="../js/main.js?v=67"></script>
 </body>
 </html>
 '''

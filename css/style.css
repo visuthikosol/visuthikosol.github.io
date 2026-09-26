@@ -1685,3 +1685,9 @@ a.feature-caption:hover h3::after, a.gallery-item:hover h3::after, a.design-tile
 }
 /* v67: wider wordmark in the hero */
 @media (min-width: 761px) { .hero-bleed .hero-text-card h1.hero-name { letter-spacing: .38em !important; white-space: nowrap; } }
+
+/* ================= v68: Multi-Purpose Bags: three designs lead, thumbnail sheet follows smaller ================= */
+.final-set.nolabel > figure.fs3 { flex: 0 1 calc(34% - 1rem); }
+.final-set.nolabel > figure.fs3 img { height: clamp(150px, 22vh, 220px) !important; }
+@media (hover: hover) and (min-width: 761px) { .ind .final-set.nolabel > .fs3 { transform-origin: left center; } }
+

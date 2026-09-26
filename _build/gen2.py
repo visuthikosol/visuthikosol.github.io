@@ -265,7 +265,7 @@ P.append(dict(slug='industrial-design', title='Industrial Design', label='Sketch
   summary="Four product studies, each taken from thumbnails and working drawings to a final concept.",
   btns=[], body=''.join(
     f'''<section class="ind reveal"><div class="ind-head"><span class="ind-num">{n}</span><h2>{t}</h2><p>{d}</p></div>'''
-    + '<div class="final-set n'+str(len(final.split()))+' focus"><span class="final-num" aria-hidden="true">'+n+'</span><span class="mono-label final-label">Final concept</span>'+''.join(fig(W(f,1600),t+' final concept','fs'+str(k)) for k,f in enumerate(final.split()))+'</div>'
+    + '<div class="final-set n'+str(len(final.split()))+' focus '+fc+'"><span class="final-num" aria-hidden="true">'+n+'</span>'+('' if fc=='nolabel' else '<span class="mono-label final-label">Final concept</span>')+''.join(fig(W(f,1600),t+' final concept','fs'+str(k)) for k,f in enumerate(final.split()))+'</div>'
     + ('<div class="ideas focus">'+''.join(f'<div class="idea"><span class="mono-label">{il}</span><div class="idea-imgs">'+''.join(fig(W(f,900),t+' idea') for f in ifs.split())+'</div></div>' for il,ifs in ideas)+'</div>' if ideas else '')
     + (strip(proc, t+' process sketch', 'Thumbnails and working drawings') if proc else '')
     + '</section>'
@@ -282,7 +282,7 @@ P.append(dict(slug='industrial-design', title='Industrial Design', label='Sketch
       '954be03392e74d3ba660ca0f9a2f7414.png 3d5cb70fd3604e8ba93c57c3cbb899dd.png','duo2', [],
       '62ef8429d84c4d729b220f38bab43a8f.png 0b854f5c84a046d3a8a7eecdd1f796b9.png 0c4735e2e1d54362b619abcd9402b3d9.png ef40b761fcbe4bf0933e0f7e54ced716.png 78c3f1de06ff43dfa07c917f4e1c3fe0.png 581fd097a8ba4f54b2094f86a9d2f058.png 14f0fcd3956c45a78905e03adec15c14.png 1013ce9be9e0428e9794238032cce509.png 4b5c4be378d7488dbc7f469d905947d6.png 01c866ac73c142879b39aa2e19df7c46.png bc4dae38e23242cba92472108691fc91.png db5feb337be948479674554439cee40a.png 71a2c13349644c80b1607c1e91142022.png cf8336bd075447ea85d6ff09f5d1bf2e.png'),
      ('04','Multi-Purpose Bags','Working drawings for bags that adapt to different uses.',
-      '2259ad2728594063a88cc991fcc44d33.png c627115361cc45ae918ee18185f2b0fc.png 5ff50d7ee9c04516b51698b600b40d2a.png b24a68b2451e467bb42e59abcf0c5d1f.png','quad', [], ''),
+      'c627115361cc45ae918ee18185f2b0fc.png 5ff50d7ee9c04516b51698b600b40d2a.png b24a68b2451e467bb42e59abcf0c5d1f.png 2259ad2728594063a88cc991fcc44d33.png','nolabel', [], ''),
     ])
 ))
 
@@ -341,7 +341,7 @@ for k,p in enumerate(P):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{p['title']} | Tanik (Nick) Visuthikosol</title>
 <meta name="description" content="{html.escape(p['summary'])}">
-<link rel="stylesheet" href="../css/style.css?v=67">
+<link rel="stylesheet" href="../css/style.css?v=70">
 </head>
 <body class="project-page p-{p["slug"]}">
 
@@ -358,7 +358,7 @@ for k,p in enumerate(P):
 {footer}
 
 <div class="lightbox" hidden><button class="lb-close" aria-label="Close">&times;</button><img alt=""></div>
-<script src="../js/main.js?v=67"></script>
+<script src="../js/main.js?v=70"></script>
 </body>
 </html>
 '''

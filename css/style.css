@@ -1379,10 +1379,7 @@ figcaption.mono-label, .pav figcaption, .plans figcaption, .ch-set figcaption, .
 }
 
 /* per-project solution sizing */
-.s-one-handed-controller .sol-media { max-width: 1240px; }
-.s-one-handed-controller .sol-media img { max-height: 88vh; }
-.s-surf-chair .sol-media { max-width: 620px; }
-.s-surf-chair .sol-media img { max-height: 46vh; mix-blend-mode: multiply; filter: brightness(1.06) contrast(1.04); }
+.s-surf-chair .sol-media img { mix-blend-mode: multiply; filter: brightness(1.06) contrast(1.04); }
 
 /* PS4 final design as a fade stack */
 .ps4-stack .dev-media.duo-media { display: flex; gap: 1.25rem; align-items: center; justify-content: center; max-height: 46vh; }
@@ -1611,9 +1608,78 @@ a.feature-caption:hover h3::after, a.gallery-item:hover h3::after, a.design-tile
 @media (max-width: 760px) { .specs-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; } .specs-row .spec-big { flex-basis: auto; width: 100%; } .result-shot { align-self: flex-start; } .result-shot img { width: 76px; height: 76px; } }
 
 /* WhiffleWash: solution photo smaller (source photo is soft when blown up large) */
-.s-whifflewash .sol-media { max-width: 460px; }
-.s-whifflewash .sol-media img { max-height: 50vh; }
 
 /* Material change ring: shift image up so the bottom of the ball isn't cropped off */
 .dev-media.ring .ringwrap img { transform: translateY(2%) scale(.94); }
 .dev-media.ring:hover .ringwrap img { transform: translateY(2%) scale(1); }
+
+/* ================= v53: one solution-photo size on every project, matched to the hero on mobile ================= */
+.sol-media { max-width: none !important; display: flex; justify-content: center; align-items: center; height: min(50vh, 460px); }
+.sol-media img { width: auto !important; height: auto !important; max-width: 100% !important; max-height: 100% !important; object-fit: contain; }
+@media (max-width: 760px) { .sol-media { height: 30svh; } }
+
+/* ================= v54: even image sets (cut-out images, identical tiles) ================= */
+.pgrid.even { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(1rem, 2.5vw, 2rem); }
+.pgrid.even > figure { flex: 0 0 calc((100% - 2 * clamp(1rem, 2.5vw, 2rem)) / 3); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+.pgrid.even.box-wide > figure { aspect-ratio: 4 / 3; }
+.pgrid.even.box-tall > figure { aspect-ratio: 1 / 2; }
+.pgrid.even > figure img { width: 100%; height: 100%; max-height: none; object-fit: contain; }
+.pgrid.even.narrow { max-width: 500px; margin-left: auto; margin-right: auto; }
+@media (max-width: 760px) {
+  .pgrid.even.fader > figure { aspect-ratio: auto !important; }
+  .pgrid.even.narrow.fader { max-width: none; }
+  .pgrid.even.box-wide.fader { height: 26svh !important; }
+  .pgrid.even.box-tall.fader { height: 28svh !important; }
+  .pgrid.even.box-sq.fader { height: 30svh !important; }
+}
+
+/* ================= v55: six-sketch wall (Architecture), even 3 x 2 ================= */
+@media (min-width: 761px) {
+  .bento.wall.six { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: clamp(240px, 26vw, 360px); gap: clamp(1.5rem, 3.5vw, 3rem); }
+  .bento.wall.six figure:nth-child(n) { grid-column: auto; grid-row: auto; min-height: 0; min-width: 0; }
+  .bento.wall.six img { max-height: 100%; }
+}
+@media (min-width: 761px) {
+  .bento.wall.six figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+/* ================= v57: idea sketches as large as the thumbnails/working drawings strip ================= */
+.ideas { grid-template-columns: 1fr; gap: clamp(2.5rem, 5vw, 4rem); }
+.idea-imgs { justify-content: flex-start; }
+.idea-imgs figure { flex: 1 1 0; min-width: 0; }
+.idea-imgs img { width: 100%; height: clamp(220px, 34vh, 340px); max-height: none; object-fit: contain; }
+@media (max-width: 760px) {
+  .ideas { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .ideas .idea-imgs.fader.fader.fader.fader.fader.fader.fader.fader { height: 30svh !important; }
+  .ideas .idea .mono-label { font-size: var(--t-cap); }
+}
+
+/* ================= v58: mobile size trims ================= */
+@media (max-width: 760px) {
+  .p-whifflewash .pgrid.circles { grid-template-columns: repeat(4, 1fr); gap: .5rem; max-width: 340px; }
+  .p-whifflewash .pgrid.circles figure { border-width: 2px; }
+  .p-one-handed-controller .collage { max-width: 72%; margin-left: auto; margin-right: auto; }
+}
+
+/* ================= v61: Industrial final concept: main view large, other views idea-sized, grow on hover ================= */
+.final-set, .final-set.n2, .final-set.n4 { display: flex !important; flex-wrap: wrap; justify-content: flex-start; align-items: center; gap: clamp(1.5rem, 3vw, 2.5rem); }
+.final-set .final-label { flex: 0 0 100%; margin-bottom: 0; }
+.final-set > figure { grid-column: auto !important; grid-row: auto !important; padding: 0 !important; margin: 0; display: flex; justify-content: center; align-items: center; }
+.final-set > .fs0 { flex: 0 0 100%; }
+.final-set > .fs0 img { width: auto !important; height: auto !important; max-width: 100% !important; max-height: min(56vh, 540px) !important; object-fit: contain; }
+.final-set > figure:not(.fs0) { flex: 0 1 calc(50% - clamp(.75rem, 1.5vw, 1.25rem)); min-width: 0; background: var(--paper); }
+.final-set > figure:not(.fs0) img { width: 100% !important; height: clamp(220px, 34vh, 340px) !important; max-height: none !important; object-fit: contain; }
+@media (hover: hover) and (min-width: 761px) {
+  .ind .final-set > figure:not(.fs0) { transition: transform .5s cubic-bezier(.2,.7,.3,1), opacity .45s ease; }
+  .ind .final-set > .fs1, .ind .final-set > .fs3 { transform-origin: left center; }
+  .ind .final-set > .fs2 { transform-origin: right center; }
+  .ind .final-set > figure:not(.fs0):hover { transform: scale(1.55) !important; z-index: 6; }
+  .ind .final-set > .fs0:hover { transform: scale(1.03) !important; }
+}
+/* Arm Rehab: 2 x 2 base views, 5 handle views in one row */
+.pgrid.even.two > figure { flex-basis: calc((100% - clamp(1rem, 2.5vw, 2rem)) / 2); }
+.pgrid.even.five { gap: clamp(.75rem, 1.8vw, 1.5rem); }
+.pgrid.even.five > figure { flex-basis: calc((100% - 4 * clamp(.75rem, 1.8vw, 1.5rem)) / 5); }
+@media (max-width: 760px) {
+  .final-set.fader.fader.fader.fader.fader.fader.fader.fader { height: 38svh !important; }
+}

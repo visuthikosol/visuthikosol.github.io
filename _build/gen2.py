@@ -18,13 +18,122 @@ LOCAL = {
     '72d2876967074dddb6c2288d151a3d80': 'ww/72d2876967074dddb6c2288d151a3d80.webp',
     'c70f6595048f4105bcdeb693b390ea63': 'ww/c70f6595048f4105bcdeb693b390ea63.webp',
     'cc50744aa8d045968aea19249d13dfc0': 'ww/cc50744aa8d045968aea19249d13dfc0.webp',
+    'b833464237f74ef3a2f6c9039542aea7': 'ps4/b833464237f74ef3a2f6c9039542aea7.webp',
+    '55a42e28dfe84288b787115019d4224f': 'ps4/55a42e28dfe84288b787115019d4224f.webp',
+    '7607658ee5194926a2f4e1c18f8b03d6': 'ps4/7607658ee5194926a2f4e1c18f8b03d6.webp',
+    'ddff0ee936b840b58b4e17070e86bb99': 'ps4/ddff0ee936b840b58b4e17070e86bb99.webp',
+    '93c88523bdf34f4cb63766b77dffd8ed': 'ps4/93c88523bdf34f4cb63766b77dffd8ed.webp',
+    '69192538e3334ecfa486fc79dbe2a75a': 'ps4/69192538e3334ecfa486fc79dbe2a75a.webp',
+    '60f1a7fbbf974df1892600f4909eac17': 'ps4/60f1a7fbbf974df1892600f4909eac17.webp',
+    'f01cb47383814bd59799c06a5e1d4696': 'ps4/f01cb47383814bd59799c06a5e1d4696.webp',
+    '789629b0696e41bb8c0323ccf29a1329': 'ps4/789629b0696e41bb8c0323ccf29a1329.webp',
+    '61f67611447b46dfa3bf42095a0194ac': 'ps4/61f67611447b46dfa3bf42095a0194ac.webp',
+    '88270d5e5afe4c9eac00011599b5f310': 'ps4/88270d5e5afe4c9eac00011599b5f310.webp',
+    '9070b65765054e5b802f943528a8dd4e': 'arm/9070b65765054e5b802f943528a8dd4e.webp',
+    '7c0c63ebe68840488ef60eb6a90c31c2': 'arm/7c0c63ebe68840488ef60eb6a90c31c2.webp',
+    '93f1e5d63160463a9512a4e6256e3afc': 'arm/93f1e5d63160463a9512a4e6256e3afc.webp',
+    'd0ee1c55507148aa9625c8f713aab0e2': 'arm/d0ee1c55507148aa9625c8f713aab0e2.webp',
+    '4a46e8fccf054e509e14bccdc038667c': 'arm/4a46e8fccf054e509e14bccdc038667c.webp',
+    'f5dc07ffd83044898d8d9670c5ae8988': 'arm/f5dc07ffd83044898d8d9670c5ae8988.webp',
+    'handle-side': 'arm/handle-side.webp',
+    'handle-top': 'arm/handle-top.webp',
+    'base-front': 'arm/base-front.webp',
+    '365baf82cdf848f0b253d0cfa673cab6': 'surf/365baf82cdf848f0b253d0cfa673cab6.webp',
+    '887bbeea009a4d7e9f1a9e967962f82e': 'surf/887bbeea009a4d7e9f1a9e967962f82e.webp',
+    '1a1bd720d5224772b0e80073c878ec97': 'surf/1a1bd720d5224772b0e80073c878ec97.webp',
+    'cdedd622541d4e52abb3d8658d58a25c': 'surf/cdedd622541d4e52abb3d8658d58a25c.webp',
+    '0acfd66709bd4873b00e20c52cebfdf7': 'surf/0acfd66709bd4873b00e20c52cebfdf7.webp',
+    'c56c15685b884a97bd213ad5c5bce7df': 'surf/c56c15685b884a97bd213ad5c5bce7df.webp',
+    'sketch4': 'surf/sketch4.webp',
+    'sketch5': 'surf/sketch5.webp',
+    '89124fa8255b432cbb1379733fe1a6d9': 'arch/89124fa8255b432cbb1379733fe1a6d9.webp',
+    '372ee243775344b987982f11591fe113': 'arch/372ee243775344b987982f11591fe113.webp',
+    '13da2d83d3184379817cc9c41ce00761': 'arch/13da2d83d3184379817cc9c41ce00761.webp',
+    'db6df9794b70468387337bac4b136805': 'arch/db6df9794b70468387337bac4b136805.webp',
+    '7b2d6afc52c34dd1af60969d4ae08728': 'arch/7b2d6afc52c34dd1af60969d4ae08728.webp',
+    'e3f8bff0fbde4897a1fefaebf0ed4706': 'arch/e3f8bff0fbde4897a1fefaebf0ed4706.webp',
+    '0468515a088c4a458b6315d6b2aa94e0': 'arch/0468515a088c4a458b6315d6b2aa94e0.webp',
+    '9df7c971b7a44758b01bf02480a353ee': 'arch/9df7c971b7a44758b01bf02480a353ee.webp',
+    '4157e4608e4743b89486fc2807bdd576': 'arch/4157e4608e4743b89486fc2807bdd576.webp',
+    '2e6f6634d8b740859e9274eeb40e1200': 'arch/2e6f6634d8b740859e9274eeb40e1200.webp',
+    'd096c0bd26794eb9b84eebc7b6eecd24': 'arch/d096c0bd26794eb9b84eebc7b6eecd24.webp',
+    'bb4b603af5164f9cb784e0b7f541563a': 'arch/bb4b603af5164f9cb784e0b7f541563a.webp',
+    '94879fede5bd41caa6d8b958e77995b8': 'arch/94879fede5bd41caa6d8b958e77995b8.webp',
+    '5682c17f011f4dc996adca54a0a730e4': 'arch/5682c17f011f4dc996adca54a0a730e4.webp',
+    'dc0ee5ba92314f8fbc6f9f20dab64aa5': 'arch/dc0ee5ba92314f8fbc6f9f20dab64aa5.webp',
+    'f6a9caff1c234fa990585501cba2444d': 'arch/f6a9caff1c234fa990585501cba2444d.webp',
+    'efee5c7dc3624009950a98a10db5ac8a': 'arch/efee5c7dc3624009950a98a10db5ac8a.webp',
+    'c3e561411f1b44d98027a9bf04cebf04': 'arch/c3e561411f1b44d98027a9bf04cebf04.webp',
+    'b02269c5b4a1431f9f9ed4fc3e21e849': 'arch/b02269c5b4a1431f9f9ed4fc3e21e849.webp',
+    '05bc342935a043a6a19db6a01e401dd6': 'arch/05bc342935a043a6a19db6a01e401dd6.webp',
+    'aca41a74e47844df9a6a6834237062e3': 'arch/aca41a74e47844df9a6a6834237062e3.webp',
+    'sk-plants': 'arch/sk-plants.webp',
+    '5b596562019c4c0b93f3bff4440836f5': 'ind/5b596562019c4c0b93f3bff4440836f5.webp',
+    'e879d716f0104552980109b5d38f7e17': 'ind/e879d716f0104552980109b5d38f7e17.webp',
+    '62f34abc7b4d41eab9c014c2eeed8b3e': 'ind/62f34abc7b4d41eab9c014c2eeed8b3e.webp',
+    '832f0b41f4814688b6242cce7e6beb83': 'ind/832f0b41f4814688b6242cce7e6beb83.webp',
+    '4cc53e96dfb44eca9848c0df3b7a80ad': 'ind/4cc53e96dfb44eca9848c0df3b7a80ad.webp',
+    '0a8cbc17a8fe46028c9c5177f0108263': 'ind/0a8cbc17a8fe46028c9c5177f0108263.webp',
+    '529b31ac137247ec8adafd941f01922a': 'ind/529b31ac137247ec8adafd941f01922a.webp',
+    'ddc8bab626d34540a091a131a1eefd80': 'ind/ddc8bab626d34540a091a131a1eefd80.webp',
+    '16dbbcd326b84071ad3a918296419b7a': 'ind/16dbbcd326b84071ad3a918296419b7a.webp',
+    '5f758b985f8647dc931defb88980907d': 'ind/5f758b985f8647dc931defb88980907d.webp',
+    '4b87d34981d641b091da4841201571c3': 'ind/4b87d34981d641b091da4841201571c3.webp',
+    '305992c11aee49e988087acdbeaf04e1': 'ind/305992c11aee49e988087acdbeaf04e1.webp',
+    '1634382e2ec54ab58a172de0e18880d9': 'ind/1634382e2ec54ab58a172de0e18880d9.webp',
+    'fadd4dc943a14846b4ebaa970691121b': 'ind/fadd4dc943a14846b4ebaa970691121b.webp',
+    '610633e8242d41318445a973b7727ccd': 'ind/610633e8242d41318445a973b7727ccd.webp',
+    '228923a3712c4297a26c0d6f218e73dc': 'ind/228923a3712c4297a26c0d6f218e73dc.webp',
+    '33a5678309c2435089c070c8ed387133': 'ind/33a5678309c2435089c070c8ed387133.webp',
+    '5543586c803d4db0a51ca48d68b22689': 'ind/5543586c803d4db0a51ca48d68b22689.webp',
+    '708d7574b874478b9311446f6da43147': 'ind/708d7574b874478b9311446f6da43147.webp',
+    '9ccc6ed6757142a7a38c5e19d8fc8d0e': 'ind/9ccc6ed6757142a7a38c5e19d8fc8d0e.webp',
+    'a2c0a98e01e941d9862bf4da6466e25a': 'ind/a2c0a98e01e941d9862bf4da6466e25a.webp',
+    'be4ca461c7024f179e70504130eebafd': 'ind/be4ca461c7024f179e70504130eebafd.webp',
+    '56da038cba2f409fbb55e24501b887fe': 'ind/56da038cba2f409fbb55e24501b887fe.webp',
+    '6b2ec448b7ed4f0db88ed52b4896d951': 'ind/6b2ec448b7ed4f0db88ed52b4896d951.webp',
+    'b691b56b4e6a42c2a111f961289ba0af': 'ind/b691b56b4e6a42c2a111f961289ba0af.webp',
+    '0acc042adc0748aa968522c0fe840ebe': 'ind/0acc042adc0748aa968522c0fe840ebe.webp',
+    '04c60f8435864d50afff8501a1c27955': 'ind/04c60f8435864d50afff8501a1c27955.webp',
+    'dce61b286ff6416bb86009251c5df272': 'ind/dce61b286ff6416bb86009251c5df272.webp',
+    'eb8bb14948ec41f7ac37c87714ecc91e': 'ind/eb8bb14948ec41f7ac37c87714ecc91e.webp',
+    '798392b72e59419e8bd454b9a98931ff': 'ind/798392b72e59419e8bd454b9a98931ff.webp',
+    'feb23c9f7e1243e38c863f7e4a2319d1': 'ind/feb23c9f7e1243e38c863f7e4a2319d1.webp',
+    '7682c35f544146a499497c21b45d9b44': 'ind/7682c35f544146a499497c21b45d9b44.webp',
+    '7ab0b98781e042fa9198a71c3580a1aa': 'ind/7ab0b98781e042fa9198a71c3580a1aa.webp',
+    '54e4ba63cc074ca3944589c520d9e862': 'ind/54e4ba63cc074ca3944589c520d9e862.webp',
+    '857f6de3009e429cbe6025631c6b3c25': 'ind/857f6de3009e429cbe6025631c6b3c25.webp',
+    '87f6050ffd654fd4aa511a5099a3a816': 'ind/87f6050ffd654fd4aa511a5099a3a816.webp',
+    '1275e535f0994826969cd0a3b9a7a9b5': 'ind/1275e535f0994826969cd0a3b9a7a9b5.webp',
+    '41a3f70764b34b3b937db0ab36309a39': 'ind/41a3f70764b34b3b937db0ab36309a39.webp',
+    'abdc11835fec42ada88de5a4a5e7174e': 'ind/abdc11835fec42ada88de5a4a5e7174e.webp',
+    'b83480aa903c4ce98bf529a64161bab2': 'ind/b83480aa903c4ce98bf529a64161bab2.webp',
+    '954be03392e74d3ba660ca0f9a2f7414': 'ind/954be03392e74d3ba660ca0f9a2f7414.webp',
+    '3d5cb70fd3604e8ba93c57c3cbb899dd': 'ind/3d5cb70fd3604e8ba93c57c3cbb899dd.webp',
+    '62ef8429d84c4d729b220f38bab43a8f': 'ind/62ef8429d84c4d729b220f38bab43a8f.webp',
+    '0b854f5c84a046d3a8a7eecdd1f796b9': 'ind/0b854f5c84a046d3a8a7eecdd1f796b9.webp',
+    '0c4735e2e1d54362b619abcd9402b3d9': 'ind/0c4735e2e1d54362b619abcd9402b3d9.webp',
+    'ef40b761fcbe4bf0933e0f7e54ced716': 'ind/ef40b761fcbe4bf0933e0f7e54ced716.webp',
+    '78c3f1de06ff43dfa07c917f4e1c3fe0': 'ind/78c3f1de06ff43dfa07c917f4e1c3fe0.webp',
+    '581fd097a8ba4f54b2094f86a9d2f058': 'ind/581fd097a8ba4f54b2094f86a9d2f058.webp',
+    '14f0fcd3956c45a78905e03adec15c14': 'ind/14f0fcd3956c45a78905e03adec15c14.webp',
+    '1013ce9be9e0428e9794238032cce509': 'ind/1013ce9be9e0428e9794238032cce509.webp',
+    '4b5c4be378d7488dbc7f469d905947d6': 'ind/4b5c4be378d7488dbc7f469d905947d6.webp',
+    '01c866ac73c142879b39aa2e19df7c46': 'ind/01c866ac73c142879b39aa2e19df7c46.webp',
+    'bc4dae38e23242cba92472108691fc91': 'ind/bc4dae38e23242cba92472108691fc91.webp',
+    'db5feb337be948479674554439cee40a': 'ind/db5feb337be948479674554439cee40a.webp',
+    '71a2c13349644c80b1607c1e91142022': 'ind/71a2c13349644c80b1607c1e91142022.webp',
+    'cf8336bd075447ea85d6ff09f5d1bf2e': 'ind/cf8336bd075447ea85d6ff09f5d1bf2e.webp',
+    '2259ad2728594063a88cc991fcc44d33': 'ind/2259ad2728594063a88cc991fcc44d33.webp',
+    'c627115361cc45ae918ee18185f2b0fc': 'ind/c627115361cc45ae918ee18185f2b0fc.webp',
+    '5ff50d7ee9c04516b51698b600b40d2a': 'ind/5ff50d7ee9c04516b51698b600b40d2a.webp',
+    'b24a68b2451e467bb42e59abcf0c5d1f': 'ind/b24a68b2451e467bb42e59abcf0c5d1f.webp',
 }
 def W(f, w=1200, crop=None):
     i,ext=f.split('.')
     if i in LOCAL:
         return '../assets/img/' + LOCAL[i]
-    c=f'crop/{crop}/' if crop else ''
-    return f'https://static.wixstatic.com/media/10d882_{i}~mv2.{ext}/v1/{c}fit/w_{w},h_{w},q_85,enc_auto/{i}.{ext}'
+    raise SystemExit(f'Image {f} has no local file in LOCAL (assets/img/). Add it before building.')
 def fig(url, alt, cls='', cap=''):
     c=f'<figcaption class="mono-label">{cap}</figcaption>' if cap else ''
     return f'<figure class="{cls}"><img src="{url}" alt="{html.escape(alt)}" loading="lazy">{c}</figure>'
@@ -95,7 +204,7 @@ P.append(dict(slug='whifflewash', solx='<div class="sol-extra focus">'+fig(W('40
 
 P.append(dict(slug='oscar', title='OSCAR: 3D Model Validation Tool', label="Shriners Children's Hospital", img='oscar.webp',
   problem="Shriners Children's Hospital needed a reliable way to check the accuracy of its 3D motion-capture system.",
-  summary="A 3D modeling calibration tool designed for Shriners Children's Hospital to validate their 3D motion-capture system.",
+  summary="A 3D modeling calibration tool built to validate a 3D motion-capture system.",
   btns=[], body=
   sec('01','How it works', split(ul(['Sized like a 7-year-old&rsquo;s skeleton, with reflective markers at the pelvis and clavicle.','Six lockable universal joints move in all three planes.','Geared dials read each joint angle, so the team knows the true value to compare against.']), fig('../assets/img/oscar-ujoint.webp','Lockable universal joint with angle gear')))+
   '<section class="specs reveal"><div class="psec-head"><span class="mono-label">02</span><h2>Meeting specs</h2></div><div class="spec-big"><div><strong>5&deg;</strong><span>angle resolution</span></div><div><strong>360&deg;</strong><span>transverse range</span></div><div><strong>6</strong><span>lockable joints</span></div></div><table class="spec-table"><thead><tr><th>Metric</th><th>Marginal</th><th>Ideal</th><th>Prototype</th></tr></thead><tbody><tr><td>Resolution, sagittal</td><td>5&deg;</td><td>1&deg;</td><td>5&deg;</td></tr><tr><td>Resolution, frontal</td><td>5&deg;</td><td>1&deg;</td><td>5&deg;</td></tr><tr><td>Resolution, transverse</td><td>10&deg;</td><td>1&deg;</td><td>10&deg;</td></tr><tr><td>Range, sagittal</td><td>127.5&deg;</td><td>&gt; 127.5&deg;</td><td>208&deg;</td></tr><tr><td>Range, frontal</td><td>89&deg;</td><td>&gt; 89&deg;</td><td>208&deg;</td></tr><tr><td>Range, transverse</td><td>140&deg;</td><td>&gt; 140&deg;</td><td>360&deg;</td></tr></tbody></table></section>'
@@ -107,7 +216,7 @@ P.append(dict(slug='one-handed-controller', title='One-Handed PS4 Controller', l
   btns=[],
   body=
   sec('01','The user', split(ul(["After his stroke, Hector has limited motor control in his right arm and leg, so he plays with his left hand only.","He can't reach all the buttons and triggers he needs in FIFA, which hurts his gameplay and is frustrating.","Goal: get him back to his previous level of play and enjoyment."]),
-      '<div class="collage">'+fig(W('b833464237f74ef3a2f6c9039542aea7.png',1000,'x_0,y_955,w_1170,h_625'),'Hector holding the controller')+fig(W('55a42e28dfe84288b787115019d4224f.png',1000,'x_0,y_955,w_1170,h_625'),'Hector playing one-handed')+'</div>'))+
+      '<div class="collage">'+fig(W('b833464237f74ef3a2f6c9039542aea7.png',1000,'x_0,y_955,w_1170,h_625'),'Hector playing one-handed')+fig(W('55a42e28dfe84288b787115019d4224f.png',1000,'x_0,y_955,w_1170,h_625'),'Hector holding the controller')+'</div>'))+
   sec('02','Final design', '<p>Levers on an axis of rotation, held by a clamp, let Hector press the right face buttons with his left hand like extra triggers. A weighted stand holds everything steady.</p><ol class="parts"><li><a href="#clamp">Clamp and band</a></li><li><a href="#levers">Accessibility levers</a></li><li><a href="#stand">Stand</a></li></ol>')+
   '<div class="dev-stack ps4-stack" data-stack>'+''.join(f'''<div class="dev-step" id="{sid}"><figure class="dev-media duo-media">{''.join(f'<img src="{W(im,900)}" alt="{t}" loading="lazy">' for im in ims.split())}</figure><div class="dev-text"><span class="dev-num">2.{n}</span><h3>{t}</h3><ul class="plist">{''.join(f'<li>{x}</li>' for x in pts)}</ul></div></div>''' for n,(sid,t,ims,pts) in enumerate([
     ('clamp','Clamp and band','7607658ee5194926a2f4e1c18f8b03d6.png ddff0ee936b840b58b4e17070e86bb99.png',['3D printed PLA clamp holds the levers on their axis.','Fits between triggers and joysticks without blocking a button.','A center rod acts as the axis, tuned in user testing.']),
@@ -122,17 +231,16 @@ P.append(dict(slug='arm-rehab', title='Arm Rehabilitation Machine', label='Chula
   summary="A low-cost arm rehabilitation machine inspired by MIT's InMotion ARM. I designed the handle.",
   btns=[], body=
   sec('Overview','Overview', "<p>I worked as a research assistant with Dr. Ronnapee Chaichaowarat at Chulalongkorn University's AI Lab, designing the handle for a low-cost arm rehabilitation machine inspired by MIT's InMotion project.</p>")+
-  sec('01','Machine assembly', imgs('11f65dcb6ad646efadf797b02323ed5a.png',1,'Machine assembly'))+
-  sec('02','Base design', '<p>Orthographic and isometric CAD views.</p>'+imgs('9070b65765054e5b802f943528a8dd4e.png 7c0c63ebe68840488ef60eb6a90c31c2.png 93f1e5d63160463a9512a4e6256e3afc.png',3,'Base CAD views'))+
-  sec('03','Handle design', imgs('d0ee1c55507148aa9625c8f713aab0e2.jpg 4a46e8fccf054e509e14bccdc038667c.png f5dc07ffd83044898d8d9670c5ae8988.jpg',3,'Handle design'))
+  sec('02','Base design', '<p>Orthographic and isometric CAD views.</p>'+imgs('9070b65765054e5b802f943528a8dd4e.png 7c0c63ebe68840488ef60eb6a90c31c2.png 93f1e5d63160463a9512a4e6256e3afc.png base-front.png',4,'Base CAD views','even box-wide two'))+
+  sec('03','Handle design', imgs('d0ee1c55507148aa9625c8f713aab0e2.jpg 4a46e8fccf054e509e14bccdc038667c.png handle-side.png handle-top.png f5dc07ffd83044898d8d9670c5ae8988.jpg',5,'Handle design','even box-tall five'))
 ))
 
 P.append(dict(slug='surf-chair', title='Surf Chair', label='Furniture Design, Copenhagen', img='surf-chair.webp',
   problem='Everyone started with the same mass-produced plywood chair. The challenge: turn a factory standard into something that feels like the coast.',
   summary="A handcrafted plywood lounge chair inspired by the flow of a surfboard and Nordic design.",
   btns=[], body=
-  sec('Overview','Design', "<p>Ergonomic angles and a flexible backrest make it comfortable and durable. The warm beige finish and visible wood grain bring to mind sand and sea. It's light and portable, so it works indoors or out.</p>"+imgs('365baf82cdf848f0b253d0cfa673cab6.jpg 887bbeea009a4d7e9f1a9e967962f82e.jpg 1a1bd720d5224772b0e80073c878ec97.jpg',3,'Surf Chair','framed'))+
-  sec('Process','Preliminary sketches', imgs('cdedd622541d4e52abb3d8658d58a25c.png 0acfd66709bd4873b00e20c52cebfdf7.png c56c15685b884a97bd213ad5c5bce7df.png',3,'Preliminary sketches'))
+  sec('Overview','Design', "<p>Ergonomic angles and a flexible backrest make it comfortable and durable. The warm beige finish and visible wood grain bring to mind sand and sea. It's light and portable, so it works indoors or out.</p>"+imgs('365baf82cdf848f0b253d0cfa673cab6.jpg 887bbeea009a4d7e9f1a9e967962f82e.jpg 1a1bd720d5224772b0e80073c878ec97.jpg',3,'Surf Chair','even box-sq'))+
+  sec('Process','Preliminary sketches', imgs('cdedd622541d4e52abb3d8658d58a25c.png 0acfd66709bd4873b00e20c52cebfdf7.png c56c15685b884a97bd213ad5c5bce7df.png sketch4.png sketch5.png',3,'Preliminary sketches','even box-sq'))
 ))
 
 P.append(dict(slug='architectural-design', title='Architectural Design', label='Study abroad, Denmark and Sweden', img='architectural-design.webp', cover=True,
@@ -140,20 +248,20 @@ P.append(dict(slug='architectural-design', title='Architectural Design', label='
   btns=[], body=
   '<section class="arch-proj reveal"><div class="arch-head"><span class="mono-label">Project 01</span><h2>TR&Aring;RAMMEN Pavilion</h2>'+
   "<p class='arch-text'>A pavilion in the park next to the SMK museum, inspired by Rodin's <em>The Head of Sorrow</em> and Utzon's Can Lis. A calm wooden structure frames the sculpture against trees and a pond, while large natural rocks serve as seating and lead visitors out into the landscape. Light shifts across the space through the day and hits the sculpture at noon.</p>"+'</div>'+
-  '<div class="pav focus">'+'<div class="pv-pair">'+fig(W('89124fa8255b432cbb1379733fe1a6d9.png',1600),'Pavilion plan and section','pv-a','Plan and section')+fig(W('372ee243775344b987982f11591fe113.png',1600),'Pavilion plan and section','pv-b','Plan and section')+'</div>'+fig(W('13da2d83d3184379817cc9c41ce00761.png',1600),'Pavilion lighting diagram','pv-c','Lighting diagram')+fig(W('db6df9794b70468387337bac4b136805.png',900),'Sculpture sketch','pv-d','Sculpture study')+fig(W('7b2d6afc52c34dd1af60969d4ae08728.png',900),'Sculpture sketch','pv-e','Sculpture study')+'</div>'
+  '<div class="pav focus">'+'<div class="pv-pair">'+fig(W('89124fa8255b432cbb1379733fe1a6d9.png',1600),'Pavilion plan','pv-a','Plan')+fig(W('372ee243775344b987982f11591fe113.png',1600),'Pavilion elevation and section','pv-b','Elevation and section')+'</div>'+fig(W('13da2d83d3184379817cc9c41ce00761.png',1600),'Pavilion lighting diagram','pv-c','Lighting diagram')+fig(W('db6df9794b70468387337bac4b136805.png',900),'Sculpture sketch','pv-d','Sculpture study')+fig(W('7b2d6afc52c34dd1af60969d4ae08728.png',900),'Sculpture sketch','pv-e','Sculpture study')+'</div>'
   '</section>'+
   '<section class="arch-proj reveal"><div class="arch-head"><span class="mono-label">Project 02</span><h2>The Living Room Culture House</h2>'+
   ("<p class='arch-text'>The living room of N&oslash;rrebro, built into Hans Tavsens Plads park with a public path running through it. Site analysis of foot traffic, demographics, and sun paths shaped the plan.</p><p>A cooking school sits 90 cm below ground for focus, a sheltered zone leads up to a street-level caf&eacute;, and gardens, workspaces, and a fireplace make it a neighborhood gathering place.</p>")+'</div>'+fig(W('e3f8bff0fbde4897a1fefaebf0ed4706.png',1400),'Culture house poster','ch-poster')+
   '<span class="mono-label arch-sub">Drawings</span>'+'<div class="ch-set focus">'+fig(W('0468515a088c4a458b6315d6b2aa94e0.png',1600),'Culture house perspective','ch-persp','Perspective')+fig('../assets/img/arch/ch-model-aerial.webp','Culture house model, aerial view','ch-m1','Model, aerial view')+'</div>'+
   '<div class="plans focus">'+fig(W('9df7c971b7a44758b01bf02480a353ee.png',1800),'Culture house floor plan','pl-floor','Floor plan')+fig(W('4157e4608e4743b89486fc2807bdd576.jpg',1600),'Culture house site plan','pl-site','Site plan')+fig(W('2e6f6634d8b740859e9274eeb40e1200.jpg',1800),'Culture house section','pl-s1','Section A')+fig(W('d096c0bd26794eb9b84eebc7b6eecd24.jpg',1800),'Culture house section','pl-s2','Section B')+'</div>'+
-  strip('bb4b603af5164f9cb784e0b7f541563a.png 94879fede5bd41caa6d8b958e77995b8.png 5682c17f011f4dc996adca54a0a730e4.jpg dc0ee5ba92314f8fbc6f9f20dab64aa5.jpg f6a9caff1c234fa990585501cba2444d.jpg','Culture house process','More drawings and models')+'</section>'+
+  strip('5682c17f011f4dc996adca54a0a730e4.jpg bb4b603af5164f9cb784e0b7f541563a.png f6a9caff1c234fa990585501cba2444d.jpg 94879fede5bd41caa6d8b958e77995b8.png dc0ee5ba92314f8fbc6f9f20dab64aa5.jpg','Culture house site analysis and interiors','Site analysis and interiors')+'</section>'+
   '<section class="arch-proj reveal"><div class="arch-head"><span class="mono-label">Workshop</span><h2>Model Making</h2><p class="arch-text">Physical models built to test form, light, material, and landscape at small scale.</p></div>'+
   '<div class="models focus">'+fig('../assets/img/arch/model-landscape.webp','Landscape study','md1','<b>01</b> Landscape study')+fig('../assets/img/arch/model-form.webp','Form study','md2','<b>02</b> Form study')+fig('../assets/img/arch/model-texture.webp','Texture study','md3','<b>03</b> Texture study')+fig('../assets/img/arch/model-roofs.webp','Roof studies','md4','<b>04</b> Roof studies')+fig('../assets/img/arch/model-enclosures.webp','Enclosure studies','md5','<b>05</b> Enclosure studies')+'</div></section>'+
   '<section class="arch-proj reveal"><div class="arch-head"><span class="mono-label">Sketchbook</span><h2>Sketches</h2></div>'+
-  bento('efee5c7dc3624009950a98a10db5ac8a.png c3e561411f1b44d98027a9bf04cebf04.png b02269c5b4a1431f9f9ed4fc3e21e849.png 05bc342935a043a6a19db6a01e401dd6.png aca41a74e47844df9a6a6834237062e3.png','wall focus','Architectural sketch')+'</section>'
+  bento('efee5c7dc3624009950a98a10db5ac8a.png b02269c5b4a1431f9f9ed4fc3e21e849.png 05bc342935a043a6a19db6a01e401dd6.png aca41a74e47844df9a6a6834237062e3.png sk-plants.png','wall six focus','Architectural sketch')+'</section>'
 ))
 
-P.append(dict(slug='industrial-design', title='Industrial Design', label='Sketches and concepts', img='https://static.wixstatic.com/media/10d882_a2c0a98e01e941d9862bf4da6466e25a~mv2.png/v1/crop/x_20,y_20,w_1214,h_790/fit/w_1400,h_1400,q_85,enc_auto/space-efficient-furniture.png', cover=True,
+P.append(dict(slug='industrial-design', title='Industrial Design', label='Sketches and concepts', img='ind/a2c0a98e01e941d9862bf4da6466e25a.webp', cover=True,
   summary="Four product studies, each taken from thumbnails and working drawings to a final concept.",
   btns=[], body=''.join(
     f'''<section class="ind reveal"><div class="ind-head"><span class="ind-num">{n}</span><h2>{t}</h2><p>{d}</p></div>'''
@@ -172,13 +280,13 @@ P.append(dict(slug='industrial-design', title='Industrial Design', label='Sketch
       '0acc042adc0748aa968522c0fe840ebe.png 04c60f8435864d50afff8501a1c27955.png dce61b286ff6416bb86009251c5df272.png eb8bb14948ec41f7ac37c87714ecc91e.png 798392b72e59419e8bd454b9a98931ff.png feb23c9f7e1243e38c863f7e4a2319d1.png 7682c35f544146a499497c21b45d9b44.png 7ab0b98781e042fa9198a71c3580a1aa.png 54e4ba63cc074ca3944589c520d9e862.png 857f6de3009e429cbe6025631c6b3c25.png 87f6050ffd654fd4aa511a5099a3a816.png 1275e535f0994826969cd0a3b9a7a9b5.png 41a3f70764b34b3b937db0ab36309a39.png abdc11835fec42ada88de5a4a5e7174e.png b83480aa903c4ce98bf529a64161bab2.png'),
      ('03','Hiking Boots','From a page of thumbnails to a detailed boot with tread and material studies.',
       '954be03392e74d3ba660ca0f9a2f7414.png 3d5cb70fd3604e8ba93c57c3cbb899dd.png','duo2', [],
-      '62ef8429d84c4d729b220f38bab43a8f.png 0b854f5c84a046d3a8a7eecdd1f796b9.png 0c4735e2e1d54362b619abcd9402b3d9.png ef40b761fcbe4bf0933e0f7e54ced716.png 78c3f1de06ff43dfa07c917f4e1c3fe0.png 581fd097a8ba4f54b2094f86a9d2f058.png 14f0fcd3956c45a78905e03adec15c14.png 1013ce9be9e0428e9794238032cce509.png 4b5c4be378d7488dbc7f469d905947d6.png 01c866ac73c142879b39aa2e19df7c46.png bc4dae38e23242cba92472108691fc91.png db5feb337be948479674554439cee40a.png 71a2c13349644c80b1607c1e91142022.png cf8336bd075447ea85d6ff09f5d1bf2e.png 464505b0e3d14984befce140c2189999.png'),
+      '62ef8429d84c4d729b220f38bab43a8f.png 0b854f5c84a046d3a8a7eecdd1f796b9.png 0c4735e2e1d54362b619abcd9402b3d9.png ef40b761fcbe4bf0933e0f7e54ced716.png 78c3f1de06ff43dfa07c917f4e1c3fe0.png 581fd097a8ba4f54b2094f86a9d2f058.png 14f0fcd3956c45a78905e03adec15c14.png 1013ce9be9e0428e9794238032cce509.png 4b5c4be378d7488dbc7f469d905947d6.png 01c866ac73c142879b39aa2e19df7c46.png bc4dae38e23242cba92472108691fc91.png db5feb337be948479674554439cee40a.png 71a2c13349644c80b1607c1e91142022.png cf8336bd075447ea85d6ff09f5d1bf2e.png'),
      ('04','Multi-Purpose Bags','Working drawings for bags that adapt to different uses.',
       '2259ad2728594063a88cc991fcc44d33.png c627115361cc45ae918ee18185f2b0fc.png 5ff50d7ee9c04516b51698b600b40d2a.png b24a68b2451e467bb42e59abcf0c5d1f.png','quad', [], ''),
     ])
 ))
 
-ST={'liminal-umbrella': ('Closing and stowing a wet umbrella while getting into a car is messy, awkward, and hard to control.', 'A handle that closes the umbrella from the grip. Pull, ratchet, done, with no reach up the wet shaft.', '../assets/img/liminal/prototype.webp'), 'whifflewash': ("Laundry pods don't always dissolve. They stick to clothes or get trapped in the drum, and the whole wash is wasted.", 'A Whiffle ball container that agitates the pod and floods it with water, so it fully dissolves and never touches your clothes.', W('4de7dcc3a37f463786779f435e3976c8.png',1800)), 'oscar': ("Shriners Children's Hospital needed a reliable way to check the accuracy of its 3D motion-capture system.", "OSCAR, a child-sized model with lockable, angle-marked joints. Set a pose, read the true angles, and compare them to what the system reports.", '../assets/img/oscar.webp'), 'one-handed-controller': ('Hector wanted to play his favorite game, FIFA, again. After a stroke, he only had one working hand.', 'A clamp-on lever system that brings every right-side button to his left hand, held steady on an adjustable stand.', W('f01cb47383814bd59799c06a5e1d4696.png',1800)), 'arm-rehab': ("Robotic arm therapy helps stroke patients recover movement, but machines like MIT's InMotion are priced beyond most clinics.", 'A low-cost rehabilitation machine, with a handle I designed around the grip a recovering patient actually has.', W('11f65dcb6ad646efadf797b02323ed5a.png',1800)), 'surf-chair': ('Everyone got the same factory-made plywood chair. Our job: give it a story.', 'The flat plywood reshaped into the flowing curve of a surfboard: light enough to carry to the beach, comfortable enough to stay.', W('365baf82cdf848f0b253d0cfa673cab6.jpg',1800))}
+ST={'liminal-umbrella': ('Closing and stowing a wet umbrella while getting into a car is messy, awkward, and hard to control.', 'A handle that closes the umbrella from the grip. Pull, ratchet, done, with no reach up the wet shaft.', '../assets/img/liminal/prototype.webp'), 'whifflewash': ("Laundry pods don't always dissolve. They stick to clothes or get trapped in the drum, and the whole wash is wasted.", 'A Whiffle ball container that agitates the pod and floods it with water, so it fully dissolves and never touches your clothes.', W('4de7dcc3a37f463786779f435e3976c8.png',1800)), 'oscar': ("Shriners Children's Hospital needed a reliable way to check the accuracy of its 3D motion-capture system.", "OSCAR, a child-sized model with lockable, angle-marked joints. Set a pose, read the true angles, and compare them to what the system reports.", '../assets/img/oscar.webp'), 'one-handed-controller': ('Hector wanted to play his favorite game, FIFA, again. After a stroke, he only had one working hand.', 'A clamp-on lever system that brings every right-side button to his left hand, held steady on an adjustable stand.', W('f01cb47383814bd59799c06a5e1d4696.png',1800)), 'arm-rehab': ("Robotic arm therapy helps stroke patients recover movement, but machines like MIT's InMotion are priced beyond most clinics.", 'A low-cost rehabilitation machine, with a handle I designed around the grip a recovering patient actually has.', ''), 'surf-chair': ('Everyone got the same factory-made plywood chair. Our job: give it a story.', 'The flat plywood reshaped into the flowing curve of a surfboard: light enough to carry to the beach, comfortable enough to stay.', '')}
 head=open(f'{ROOT}/projects.html').read()
 start=head.index('<header class="site-header">'); end=head.index('</header>')+9
 header=head[start:end].replace('href="','href="../').replace('href="../http','href="http').replace(' class="active"','')
@@ -233,9 +341,9 @@ for k,p in enumerate(P):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{p['title']} | Tanik (Nick) Visuthikosol</title>
 <meta name="description" content="{html.escape(p['summary'])}">
-<link rel="stylesheet" href="../css/style.css?v=40">
+<link rel="stylesheet" href="../css/style.css?v=61">
 </head>
-<body class="project-page">
+<body class="project-page p-{p["slug"]}">
 
 {header}
 
@@ -250,7 +358,7 @@ for k,p in enumerate(P):
 {footer}
 
 <div class="lightbox" hidden><button class="lb-close" aria-label="Close">&times;</button><img alt=""></div>
-<script src="../js/main.js?v=40"></script>
+<script src="../js/main.js?v=61"></script>
 </body>
 </html>
 '''
